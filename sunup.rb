@@ -1,17 +1,27 @@
+# Copyright Taylor Stib 2015
+
 require 'sinatra'
 require 'sinatra/reloader'
 require 'active_support/core_ext/date'
 require './lib/date_calc'
 
 get '/' do
-  x = DateCalc.new
-  @thing = x.inspect
-  @today = x.today
+  @today = Date.today
   erb :index, :locals => { :today => @today, :thing => @thing }
 end
 
 get '/days' do 
-  erb :num_days
+  x = DateCalc.new
+  @today = x.today 
+  erb :num_days, :locals => { :today => @today }
+end
+
+post '/days' do 
+  x = DateCalc.new
+  @today = x.today
+  @num_days = params[:daysago].to_i
+  @date = @today - @num_days
+  erb :num_days, :locals => { :today => @today, :daysago => @daysago, :date => @date }
 end
 
 get '/days/:num_days' do 
@@ -23,8 +33,27 @@ get '/days/:num_days' do
   erb :num_days, :locals => { :today => @today, :num_days => @num_days, :date => @date }
 end
 
-get '/date' do 
-  erb :diff
+get '/date' do
+  x = DateCalc.new
+  @today = x.today 
+  erb :diff, :locals => { :today => @today }
+end
+
+post '/date' do
+  @today = Date.today
+  @date_split = params[:date].split('/')
+  @month = @date_split[0].to_i
+  @day   = @date_split[1].to_i
+  @year  = @date_split[2].to_i
+  @date = Date.new(@year,@month,@day)
+  # Do not want a negative result
+  if @today > @date
+    @diff = (@today - @date).to_i
+  else
+    @diff = (@date - @today).to_i
+  end
+
+  erb :diff, :locals => { :date => @date, :diff => @diff }
 end
 
 get '/date/:month/:day/:year' do
@@ -54,7 +83,7 @@ post '/date' do
   @year  = params[:year].to_i
   @date = Date.new(@year,@month,@day)
 
-
+  # Do not want a negative result
   if @today > @date
     @diff = (@today - @date).to_i
   else
@@ -62,4 +91,8 @@ post '/date' do
   end
 
   erb :diff, :locals => { :date => @date, :diff => @diff }
+end
+
+get '/test' do
+  erb :navpartial
 end

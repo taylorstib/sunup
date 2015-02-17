@@ -1,26 +1,47 @@
-<html>
-<head>
-  <title>Date Calculator</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-<body>
-    <header>
-      <a href="/">Home</a>
-      <a href="/date">Date</a>
-      <a href="/days">Days</a>
-    </header>
-    <h1>Find the Day Difference between dates</h1>
-    <p><%= "-"*40 %></p>
-    <p>Today: <%= @today.to_s %></p>
-    <p>Date:  <%= @date.to_s %></p>
-    <p>Day difference:  <strong><%= @diff.to_s %></p></strong>
-    <p><%= "-"*40 %></p>
+  <%= erb :navpartial %>
+
+    <h1>Find the number of days difference between dates</h1><br>
+    <table class="table table-bordered">
+      <tr>
+        <th>Label</th>
+        <th>Date</th>
+      </tr>
+      <tr>
+        <td>Today</td>
+        <td><%= @today.strftime('%B %d, %Y') unless @today.nil? %></td>
+      </tr>
+      <tr>
+        <td>Date</td>
+        <td><%= @date.strftime('%B %d, %Y') unless @date.nil? %></td>
+      </tr>
+      <tr>
+        <td>Day Difference</td>
+        <td><%= @diff.to_s %></td>
+      </tr>
+    </table>
+
+    <form action="/date" method="post">
+      <div class="row">
+        <div class="col-xs-4">
+          <label for"date">Date: </label>
+          <input type="text" name="date" class="form-control" placeholder="Ex. 12/30/2012 or 2/21/2000" autofocus='true'>
+        </div>
+      </div>
+        <button type="submit" class="btn btn-primary">Calculate!</button>
+    </form>
 
     <h3>Pick a pre-determined date</h3>
-      <a href="/date/9/2/1945">End of WWII</a>
-      <a href="/date/10/7/1990">My Birthday</a>
-      <a href="/date/2/26/1962">Mom's Birthday</a>
-      <a href="/date/9/25/1988">Matthew's BDay</a>
+      <a href="/date/9/2/1945" class="btn btn-default btn-lg">End of WWII</a>
+      <a href="/date/1/1/1900" class="btn btn-default btn-lg">Turn of the 20th Century</a>
+      <a href="/date/1/1/2000" class="btn btn-default btn-lg">Y2K</a>
+      <a href="/date/6/4/1776" class="btn btn-default btn-lg">July 4th 1776</a>
+      <a href="/date/1/1/2020" class="btn btn-default btn-lg">January 1, 2020</a>
+      <a href="/date/1/16/1962" class="btn btn-default btn-lg">Random Day</a><br><br>
+    
+      <%= erb :instruction %>
 
+  </div> <!-- end of the container div -->
+
+    <%= erb :footerpartial %>
   </body>
 </html>
