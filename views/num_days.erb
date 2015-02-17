@@ -1,0 +1,27 @@
+<html>
+<head>
+  <title>Date Calculator</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <header>
+      <a href="/">Home</a>
+      <a href="/date">Date</a>
+      <a href="/days">Days</a>
+    </header>
+    <h1>Welcome to the Date Calculator</h1>
+    <p><%= "-"*40 %></p>
+    <p>Today: <%= @today.to_s %></p>
+    <p>Number of days:  <%= @num_days.to_s %></p>
+    <p>Date:  <strong><%= @date.to_s %></p></strong>
+    <p><%= "-"*40 %></p>
+
+    <h3>Some quick links</h3>
+      <a href="/days/1000">1000 days</a>
+      <a href="/days/50">50 days</a>
+      <a href="/days/20000">20,000 days</a>
+      <a href="/days/250">250 days</a>
+      <a href="/days/9000">9,000 days</a>
+
+  </body>
+</html>

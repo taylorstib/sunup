@@ -1,0 +1,26 @@
+<html>
+<head>
+  <title>Date Calculator</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <header>
+      <a href="/">Home</a>
+      <a href="/date">Date</a>
+      <a href="/days">Days</a>
+    </header>
+    <h1>Find the Day Difference between dates</h1>
+    <p><%= "-"*40 %></p>
+    <p>Today: <%= @today.to_s %></p>
+    <p>Date:  <%= @date.to_s %></p>
+    <p>Day difference:  <strong><%= @diff.to_s %></p></strong>
+    <p><%= "-"*40 %></p>
+
+    <h3>Pick a pre-determined date</h3>
+      <a href="/date/9/2/1945">End of WWII</a>
+      <a href="/date/10/7/1990">My Birthday</a>
+      <a href="/date/2/26/1962">Mom's Birthday</a>
+      <a href="/date/9/25/1988">Matthew's BDay</a>
+
+  </body>
+</html>
