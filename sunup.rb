@@ -3,30 +3,35 @@
 require 'sinatra'
 require 'sinatra/reloader'
 require 'active_support/core_ext/date'
-require './lib/date_calc'
+
+before do
+  @today = Date.today
+end
 
 get '/' do
-  @today = Date.today
+  @today
   erb :index, :locals => { :today => @today, :thing => @thing }
 end
 
 get '/days' do 
-  x = DateCalc.new
-  @today = x.today 
+  @today
   erb :num_days, :locals => { :today => @today }
 end
 
 post '/days' do 
-  x = DateCalc.new
-  @today = x.today
+  @today
   @num_days = params[:daysago].to_i
-  @date = @today - @num_days
+  # Allow user to go forward in time
+  if @num_days > 0
+    @date = @today - @num_days
+  else
+    @date = @today + @num_days.abs
+  end
   erb :num_days, :locals => { :today => @today, :daysago => @daysago, :date => @date }
 end
 
 get '/days/:num_days' do 
-  x = DateCalc.new
-  @today = x.today
+  @today
   @num_days = params[:num_days].to_i
   @date = @today - @num_days
 
@@ -34,17 +39,15 @@ get '/days/:num_days' do
 end
 
 get '/date' do
-  x = DateCalc.new
-  @today = x.today 
+  @today
   erb :diff, :locals => { :today => @today }
 end
 
 post '/date' do
-  @today = Date.today
-  @date_split = params[:date].split('/')
-  @month = @date_split[0].to_i
-  @day   = @date_split[1].to_i
-  @year  = @date_split[2].to_i
+  @today
+  @month = params[:month].to_i
+  @day = params[:day].to_i
+  @year = params[:year].to_i
   @date = Date.new(@year,@month,@day)
   # Do not want a negative result
   if @today > @date
@@ -52,13 +55,11 @@ post '/date' do
   else
     @diff = (@date - @today).to_i
   end
-
   erb :diff, :locals => { :date => @date, :diff => @diff }
 end
 
 get '/date/:month/:day/:year' do
-  x = DateCalc.new
-  @today = x.today
+  @today
   # Turn string param into integer so it can be fed into Date.new
   @day   = params[:day].to_i
   @month = params[:month].to_i
@@ -76,8 +77,7 @@ get '/date/:month/:day/:year' do
 end
 
 post '/date' do
-  x = DateCalc.new
-  @today = x.today
+  @today
   @month = params[:month].to_i
   @day   = params[:day].to_i
   @year  = params[:year].to_i
@@ -93,6 +93,3 @@ post '/date' do
   erb :diff, :locals => { :date => @date, :diff => @diff }
 end
 
-get '/test' do
-  erb :navpartial
-end
