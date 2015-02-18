@@ -1,7 +1,6 @@
 <%= erb :navpartial %>
 
       <h1>What date was ___ Days ago...?</h1><br>
-      <div class="table-responsive">
         <table class="table table-bordered">
           <tr>
             <th>Label</th>
@@ -20,7 +19,7 @@
             <td><%= @date.strftime('%B %d, %Y') unless @date.nil? %></td>
           </tr>
         </table>
-      </div>
+
 
       <form action="/days" method="post">
         <div class="row">
