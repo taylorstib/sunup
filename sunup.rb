@@ -1,7 +1,7 @@
 # Copyright Taylor Stib 2015
 
 require 'sinatra'
-require 'sinatra/reloader'
+require 'sinatra/reloader' if development?
 require 'active_support/core_ext/date'
 
 before do
