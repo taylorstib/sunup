@@ -32,6 +32,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activesupport
-  sinatra
+  activesupport (= 4.2.0)
+  sinatra (= 1.4.5)
   thin (~> 1.6.2)
