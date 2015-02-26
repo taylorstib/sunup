@@ -1,0 +1,1 @@
+web: bundle exec ruby sunup.rb -p $PORT
