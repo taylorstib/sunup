@@ -40,7 +40,7 @@ end
 
 get '/date' do
   @today
-  erb :diff, :locals => { :today => @today }
+  erb :diff,  :locals => { :today => @today }
 end
 
 post '/date' do
