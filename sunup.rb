@@ -47,7 +47,7 @@ end
 post '/date' do
   puts params[:date]
   @today
-  @date = Date.parse(params[:date])
+  @date = Date.strptime(params[:date], "%m/%d/%Y")
   @month = @date.month
   @day = @date.day
   @year = @date.year
@@ -79,20 +79,20 @@ get '/date/:month/:day/:year' do
   erb :diff, :locals => { :date => @date, :diff => @diff }
 end
 
-post '/date' do
-  @today
-  @month = params[:month].to_i
-  @day   = params[:day].to_i
-  @year  = params[:year].to_i
-  @date = Date.new(@year,@month,@day)
+# post '/date' do
+#   @today
+#   @month = params[:month].to_i
+#   @day   = params[:day].to_i
+#   @year  = params[:year].to_i
+#   @date = Date.new(@year,@month,@day)
 
-  # Do not want a negative result
-  if @today > @date
-    @diff = (@today - @date).to_i
-  else
-    @diff = (@date - @today).to_i
-  end
+#   # Do not want a negative result
+#   if @today > @date
+#     @diff = (@today - @date).to_i
+#   else
+#     @diff = (@date - @today).to_i
+#   end
 
-  erb :diff, :locals => { :date => @date, :diff => @diff }
-end
+#   erb :diff, :locals => { :date => @date, :diff => @diff }
+# end
 
