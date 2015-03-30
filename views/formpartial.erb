@@ -2,25 +2,11 @@
     <form action="/date" method="post">
       <div class="row">
         <div class="col-xs-12">
-          <label for"month">Month: (number from 1 - 12)</label>
-          <input type="number" min="1" max="12" name="month" class="form-control" placeholder="Month" autofocus='true' >
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <label for="day">Day: (number 1 - 31) </label>
-          <input type="number" min="1" max="31" class="form-control" placeholder="Day" name="day">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <label for="year">Year: (four digit year) </label> 
-          <input type="number" min="0" class="form-control" name="year" placeholder="year"><br>
+          <label for="datepicker">Date</label>
+          <input type="text" name="date" class="form-control" placeholder="Date" autofocus='true' id="datepicker">
         </div>
       </div>
       <button type="submit" class="btn btn-primary">Calculate!</button>
     </form><br><br>
   
-  <input type="text" id="datepicker">
-
   </div>

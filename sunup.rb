@@ -3,6 +3,7 @@
 require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'active_support/core_ext/date'
+require 'date'
 
 before do
   @today = Date.today
@@ -44,11 +45,13 @@ get '/date' do
 end
 
 post '/date' do
+  puts params[:date]
   @today
-  @month = params[:month].to_i
-  @day = params[:day].to_i
-  @year = params[:year].to_i
-  @date = Date.new(@year,@month,@day)
+  @date = Date.parse(params[:date])
+  @month = @date.month
+  @day = @date.day
+  @year = @date.year
+  # @date = Date.new(@year,@month,@day)
   # Do not want a negative result
   if @today > @date
     @diff = (@today - @date).to_i
