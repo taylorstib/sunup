@@ -8,4 +8,4 @@ Todo
 
   - Make a dynamic title for each page
   - Fix the local time bug
-  - 
+  - Fix jquery auto focus
