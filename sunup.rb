@@ -4,9 +4,15 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'active_support/core_ext/date'
 require 'date'
+require 'better_errors'
+
+configure :development do
+  use BetterErrors::Middleware
+  BetterErrors.application_root = __dir__
+end
 
 before do
-  @today = Date.today
+  @today = (Time.now - (3600*7)).to_date
 end
 
 get '/' do
@@ -45,13 +51,15 @@ get '/date' do
 end
 
 post '/date' do
-  puts params[:date]
   @today
-  @date = Date.strptime(params[:date], "%m/%d/%Y")
-  @month = @date.month
-  @day = @date.day
-  @year = @date.year
-  # @date = Date.new(@year,@month,@day)
+  if !params[:date].blank?
+    @date = Date.strptime(params[:date], "%m/%d/%Y")
+  elsif !params[:month].blank?
+    @month = params[:month].to_i
+    @day = params[:day].to_i
+    @year = params[:year].to_i
+    @date = Date.new(@year,@month,@day)
+  end
   # Do not want a negative result
   if @today > @date
     @diff = (@today - @date).to_i
