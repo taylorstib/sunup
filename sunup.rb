@@ -4,7 +4,7 @@ require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'active_support/core_ext/date'
 require 'date'
-require 'better_errors'
+require 'better_errors' if development?
 
 configure :development do
   use BetterErrors::Middleware
