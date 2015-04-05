@@ -6,3 +6,4 @@ gem 'thin', '~> 1.6.2', :group => :development
 gem 'puma', :group => :production 
 gem 'sinatra-contrib', :group => :development
 gem 'better_errors', :group => :development
+gem 'binding_of_caller', group: :development 
