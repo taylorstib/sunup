@@ -7,5 +7,4 @@ A simple [Sinatra](http://www.sinatrarb.com) app that will calculate the differe
 Todo
 
   - Make a dynamic title for each page
-  - Fix the local time bug
-  - Fix jquery auto focus
+  - Adjust time to account for UTC
