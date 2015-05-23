@@ -1,22 +1,24 @@
 
       <h1>What date was <%= @num_days || "___" %> days ago...?</h1><br>
-        <table class="table table-bordered">
-          <tr>
-            <th>Label</th>
-            <th>Date</th>
-          </tr>
-          <tr>
-            <td>Today</td>
-            <td><%= @today.strftime('%B %d, %Y') unless @today.nil? %></td>
-          </tr>
-          <tr>
-            <td>Number of Days</td>
-            <td><%= @num_days.to_s %></td>
-          </tr>
-          <tr>
-            <td>Date</td>
-            <td><%= @date.strftime('%B %d, %Y') unless @date.nil? %></td>
-          </tr>
+        <table class="full-width">
+          <tbody class="zebra">
+            <tr>
+              <th>Label</th>
+              <th>Date</th>
+            </tr>
+            <tr>
+              <td>Today</td>
+              <td><%= @today.strftime('%B %d, %Y') unless @today.nil? %></td>
+            </tr>
+            <tr>
+              <td>Number of Days</td>
+              <td><%= @num_days.to_s %></td>
+            </tr>
+            <tr>
+              <td>Date</td>
+              <td><%= @date.strftime('%B %d, %Y') unless @date.nil? %></td>
+            </tr>
+          </tbody>
         </table>
 
   <div class="row">
@@ -28,18 +30,18 @@
             <input type="number" name="daysago" class="form-control" placeholder="1450" autofocus='true'>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary">Calculate!</button>
+        <button type="submit" class="bg-blue">Calculate!</button>
       </form>
     </div>
     <div class="col-xs-12 col-md-5 col-md-push-1">
       <h3>Some quick links</h3>
-        <a href="/days/7" class="btn btn-default btn-lg">7 days</a>
-        <a href="/days/50" class="btn btn-default btn-lg">50 days</a>
-        <a href="/days/100" class="btn btn-default btn-lg">100 days</a>
-        <a href="/days/500" class="btn btn-default btn-lg">500 days</a>
-        <a href="/days/1000" class="btn btn-default btn-lg">1,000 days</a>
-        <a href="/days/10000" class="btn btn-default btn-lg">10,000 days</a>
-        <a href="/days/20000" class="btn btn-default btn-lg">20,000 days</a><br><br>
+        <button class="bg-orange loose"><a href="/days/7">7 days</a></button>
+        <button class="bg-orange loose"><a href="/days/50">50 days</a></button>
+        <button class="bg-orange loose"><a href="/days/100">100 days</a></button>
+        <button class="bg-orange loose"><a href="/days/500">500 days</a></button>
+        <button class="bg-orange loose"><a href="/days/1000">1,000 days</a></button>
+        <button class="bg-orange loose"><a href="/days/10000">10,000 days</a></button>
+        <button class="bg-orange loose"><a href="/days/20000">20,000 days</a></button><br><br>
     </div>
   </div>
   <%= erb :instruction %>
