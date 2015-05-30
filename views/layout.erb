@@ -23,31 +23,16 @@
     <![endif]-->
 
 </head>
-<body>
+<body class="bg-subtle">
   <div class="container">
       <!-- Static navbar -->
-      <nav class="navbar navbar-inverse" role="navigation">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/">Date Calculator</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="/date">Date</a></li>
-          </ul>
-           <ul class="nav navbar-nav">
-            <li><a href="/days">Days</a></li>
-          </ul>           
-          <ul class="nav navbar-nav">
-            <li><a href="http://taylorstib.com">Creator's Homepage</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </nav>
+      <header class="top-bar depth-2 bg-white" role="navigation">
+        <ul class="tabs">
+          <li><a class="card depth-4" href="/">Date Calculator</a></li>
+          <li><a href="/date">Date</a></li>
+          <li><a href="/days">Days</a></li>
+        </ul>           
+      </header>
 
       <%= yield %>
 
