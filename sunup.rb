@@ -5,6 +5,8 @@ require 'sinatra/reloader' if development?
 require 'active_support/core_ext/date'
 require 'date'
 require 'better_errors' if development?
+require 'sinatra/json'
+require_relative 'helpers/application_helper'
 
 configure :development do
   use BetterErrors::Middleware
@@ -87,20 +89,34 @@ get '/date/:month/:day/:year' do
   erb :diff, :locals => { :date => @date, :diff => @diff }
 end
 
-# post '/date' do
-#   @today
-#   @month = params[:month].to_i
-#   @day   = params[:day].to_i
-#   @year  = params[:year].to_i
-#   @date = Date.new(@year,@month,@day)
+get '/today' do
+  json today: @today
+end
 
-#   # Do not want a negative result
-#   if @today > @date
-#     @diff = (@today - @date).to_i
-#   else
-#     @diff = (@date - @today).to_i
-#   end
+get '/api/days/:num_days' do 
+  @today
+  @num_days = params[:num_days].to_i
+  @date = @today - @num_days
 
-#   erb :diff, :locals => { :date => @date, :diff => @diff }
-# end
+  json date: @date.strftime('%B %d, %Y')
+end
 
+
+get '/api/date/:month/:day/:year' do
+  @today
+    if !params[:date].blank?
+      @date = Date.strptime(params[:date], "%m/%d/%Y")
+    elsif !params[:month].blank?
+      @month = params[:month].to_i
+      @day = params[:day].to_i
+      @year = params[:year].to_i
+      @date = Date.new(@year,@month,@day)
+    end
+    # Do not want a negative result
+    if @today > @date
+      @diff = (@today - @date).to_i
+    else
+      @diff = (@date - @today).to_i
+    end
+  json day_difference: format_decimal(@diff)
+end
