@@ -118,5 +118,5 @@ get '/api/date/:month/:day/:year' do
     else
       @diff = (@date - @today).to_i
     end
-  json day_difference: format_thousands(@diff)
+  json date: "#{@date}", difference: "#{format_thousands(@diff)}"
 end
