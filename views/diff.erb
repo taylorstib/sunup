@@ -25,6 +25,18 @@
           <td>Day Difference</td>
           <td><strong><%= @diff.to_s %></strong></td>
         </tr>
+        <tr>
+          <td>Relative Difference</td>
+          <td><strong><%= @words %></strong></td>
+        </tr>
+        <tr>
+          <td>Amount</td>
+          <td><strong><%= format_thousands (@diff/7)*717 %></strong></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
       </tbody>
     </table>
 
@@ -40,7 +52,9 @@
         <button class="bg-blue-grey l"><a href="/date/11/26/<%= Date.today.year %>">Thanksgiving</a></button>
         <button class="bg-blue-grey l"><a href="/date/12/25/<%= Date.today.year %>">Christmas</a></button>
         <button class="bg-blue-grey l"><a href="/date/6/10/2015">Got Pip</a></button>
+        <button class="bg-blue-grey l"><a href="/date/8/13/2015">Packers First Preseason</a></button>
         <button class="bg-blue-grey l"><a href="/date/9/10/2015">NFL First Game</a></button>
+        <button class="bg-blue-grey l"><a href="/date/2/7/2016">Super Bowl</a></button>
         <button class="bg-blue-grey l"><a href="/date/8/5/2016">Summer Olympics Brazil</a></button><br><br>
         
         <button class="bg-blue-grey l"><a href="/date/3/7/2015">March 7th, 2015</a></button>
