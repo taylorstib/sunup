@@ -29,10 +29,10 @@
           <td>Relative Difference</td>
           <td><strong><%= @words %></strong></td>
         </tr>
-        <% if @diff -%>
+        <% if @diff %>
           <tr>
             <td>Amount</td>
-            <td><strong><%= format_thousands (@diff/7)*717 %></strong></td>
+            <td><strong>$<%= format_thousands (@diff/7)*717 %></strong></td>
           </tr>
         <% end -%>
       </tbody>
