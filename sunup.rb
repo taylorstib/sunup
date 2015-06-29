@@ -68,8 +68,15 @@ post '/date' do
   else
     @diff = (@date - @today).to_i
   end
-  @words = day_difference_to_words @diff
-  erb :diff, :locals => { :date => @date, :diff => @diff, :words => @words }
+
+  if @diff
+    @words = day_difference_to_words @diff
+    @amount = format_thousands((@diff/7)*717)
+  else
+    @words = ''
+    @amount = ''
+  end
+  erb :diff, :locals => { :date => @date, :diff => @diff, :words => @words, :amount => @amount }
 end
 
 get '/date/:month/:day/:year' do
@@ -87,9 +94,15 @@ get '/date/:month/:day/:year' do
     @diff = (@date - @today).to_i
   end
 
-  @words = day_difference_to_words @diff
+  if @diff
+    @words = day_difference_to_words @diff
+    @amount = format_thousands((@diff/7)*717)
+  else
+    @words = ''
+    @amount = ''
+  end
 
-  erb :diff, :locals => { :date => @date, :diff => @diff, :words => @words }
+  erb :diff, :locals => { :date => @date, :diff => @diff, :words => @words, :amount => @amount }
 end
 
 get '/today' do
