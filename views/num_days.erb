@@ -8,7 +8,7 @@
             </tr>
             <tr>
               <td>Today</td>
-              <td><%= @today.strftime('%B %d, %Y') unless @today.nil? %></td>
+              <td><%= @today.strftime('%a, %b %d, %Y') unless @today.nil? %></td>
             </tr>
             <tr>
               <td>Number of Days</td>
@@ -16,7 +16,7 @@
             </tr>
             <tr>
               <td>Date</td>
-              <td><%= @date.strftime('%B %d, %Y') unless @date.nil? %></td>
+              <td><%= @date.strftime('%a, %b %d, %Y') unless @date.nil? %></td>
             </tr>
           </tbody>
         </table>

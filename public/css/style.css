@@ -1,1 +1,11 @@
 /*Custom Styles*/
+
+.front-links{
+  font-weight: bold;
+  color: blue;
+  font-size: 20px;
+}
+
+.light{
+  color: #bbb;
+}

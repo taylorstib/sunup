@@ -2,7 +2,9 @@
 
 require 'sinatra'
 require 'sinatra/reloader' if development?
+require 'active_support'
 require 'active_support/core_ext/date'
+require 'active_support/core_ext/numeric/conversions'
 require 'date'
 require 'better_errors' if development?
 require 'sinatra/json'
@@ -72,11 +74,13 @@ post '/date' do
   if @diff
     @words = day_difference_to_words @diff
     @amount = format_thousands((@diff/7)*717)
+    @savings = format_thousands((@diff/7)*135)
   else
     @words = ''
     @amount = ''
+    @savings = ''
   end
-  erb :diff, :locals => { :date => @date, :diff => @diff, :words => @words, :amount => @amount }
+  erb :diff, :locals => { date: @date, diff: @diff, words: @words, amount: @amount, savings: @savings }
 end
 
 get '/date/:month/:day/:year' do
@@ -94,15 +98,19 @@ get '/date/:month/:day/:year' do
     @diff = (@date - @today).to_i
   end
 
+  fridays = Date.today.end_of_week(:friday)
+
   if @diff
     @words = day_difference_to_words @diff
     @amount = format_thousands((@diff/7)*717)
+    @savings = format_thousands((@diff/7)*135)
+    @left_over = format_thousands((@diff/7)*400)
   else
     @words = ''
     @amount = ''
   end
 
-  erb :diff, :locals => { :date => @date, :diff => @diff, :words => @words, :amount => @amount }
+  erb :diff, :locals => { date: @date, diff: @diff, words: @words, amount: @amount, savings: @savings, left_over: @left_over }
 end
 
 get '/today' do
