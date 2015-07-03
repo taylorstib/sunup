@@ -11,3 +11,7 @@ def day_difference_to_words diff
     ' '
   end
 end
+
+def future_or_past
+  
+end

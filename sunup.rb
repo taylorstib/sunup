@@ -94,23 +94,26 @@ get '/date/:month/:day/:year' do
   # Do not want a negative result
   if @today > @date
     @diff = (@today - @date).to_i
+    fridays = (@date..@today).select { |k| k.wday == 5 }
+    @fridays = fridays.count
   else
     @diff = (@date - @today).to_i
+    fridays = (@today..@date).select { |k| k.wday == 5 }
+    @fridays = fridays.count
   end
 
-  fridays = Date.today.end_of_week(:friday)
 
   if @diff
     @words = day_difference_to_words @diff
-    @amount = format_thousands((@diff/7)*717)
-    @savings = format_thousands((@diff/7)*135)
-    @left_over = format_thousands((@diff/7)*400)
+    @amount = format_thousands(@fridays*717)
+    @savings = format_thousands(@fridays*135)
+    @left_over = format_thousands(@fridays*400)
   else
     @words = ''
     @amount = ''
   end
 
-  erb :diff, :locals => { date: @date, diff: @diff, words: @words, amount: @amount, savings: @savings, left_over: @left_over }
+  erb :diff, :locals => { date: @date, diff: @diff, words: @words, amount: @amount, savings: @savings, left_over: @left_over, fridays: @fridays }
 end
 
 get '/today' do
