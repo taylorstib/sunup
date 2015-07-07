@@ -4,6 +4,7 @@
       <th>Events</th>
       <th>Date</th>
       <th>Difference</th>
+      <th># of Fridays</th>
     </tr>
     <tr>
       <td>Today</td>
@@ -12,8 +13,9 @@
     </tr>
     <% @dates.each do |date| %>
       <tr>
-        <td><%= date[:event] %></td>
+        <td><strong><%= date[:event] %></strong></td>
         <td><%= date[:date].strftime('%a, %b %d, %Y')  %></td>
         <td><%= day_difference_to_words((date[:date] - @today).to_i) %></td>
+        <td><%= count_fridays(@today, date[:date]) %></td>
       </tr>
     <% end %>

@@ -14,4 +14,16 @@ module ApplicationHelper
     end
   end
 
+  def count_fridays today, date
+    if today > date
+      diff = (today - date).to_i
+      fridays = (date..today).select { |k| k.wday == 5 }
+      fridays = fridays.count
+    else
+      diff = (date - today).to_i
+      fridays = (today..date).select { |k| k.wday == 5 }
+      fridays = fridays.count
+    end
+  end
+
 end
