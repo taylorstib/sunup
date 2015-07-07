@@ -10,6 +10,8 @@ require 'better_errors' if development?
 require 'sinatra/json'
 require_relative 'helpers/application_helper'
 
+helpers ApplicationHelper
+
 configure :development do
   use BetterErrors::Middleware
   BetterErrors.application_root = __dir__
@@ -24,12 +26,32 @@ get '/' do
   erb :index, :locals => { :today => @today, :thing => @thing }
 end
 
-get '/days' do 
+get '/all' do
+  @dates = [
+    {event: 'Cabo',                       date: Date.new(2015,7,21)},
+    {event: 'Packer\'s First Preseason',  date: Date.new(2015,8,13)},
+    {event: 'Wisonsin',                   date: Date.new(2015,9,4)},
+    {event: 'NFL First Game',             date: Date.new(2015,9,10)},
+    {event: 'Work Retreat',               date: Date.new(2015,9,20)},
+    {event: 'My Bday',                    date: Date.new(2015,10,7)},
+    {event: 'Kendall Bday',               date: Date.new(2015,10,12)},
+    {event: 'Hassan Bday',                date: Date.new(2015,10,13)},
+    {event: 'Halloween',                  date: Date.new(2015,10,31)},
+    {event: 'Thanksgiving',               date: Date.new(2015,11,26)},
+    {event: 'Dublin Conference',          date: Date.new(2015,11,3)},
+    {event: 'Christmas',                  date: Date.new(2015,12,25)},
+    {event: 'New Years',                  date: Date.new(2016,1,1)},
+    ]
+
+  erb :all_in_one, :locals => {:dates => @dates }
+end
+
+get '/days' do
   @today
   erb :num_days, :locals => { :today => @today }
 end
 
-post '/days' do 
+post '/days' do
   @today
   @num_days = params[:daysago].to_i
   # Allow user to go forward in time
@@ -41,7 +63,7 @@ post '/days' do
   erb :num_days, :locals => { :today => @today, :daysago => @daysago, :date => @date }
 end
 
-get '/days/:num_days' do 
+get '/days/:num_days' do
   @today
   @num_days = params[:num_days].to_i
   @date = @today - @num_days
@@ -130,7 +152,7 @@ get '/today' do
   json today: @today
 end
 
-get '/api/days/:num_days' do 
+get '/api/days/:num_days' do
   @today
   @num_days = params[:num_days].to_i
   @date = @today - @num_days
