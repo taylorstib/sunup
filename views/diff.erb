@@ -1,5 +1,5 @@
 
-    
+
     <% if @date.nil? %>
       <h1>Difference between today and ____ </h1>
       <h2>Please enter a date</h2><br>
@@ -60,6 +60,7 @@
         <button class="bg-yellow l"><a href="/date/7/30/2015">July 30th</a></button>
         <button class="bg-blue l"><a href="/date/10/7/<%= Date.today.year %>">October 7th</a></button>
         <button class="bg-purple l"><a href="/date/10/13/<%= Date.today.year %>">October 13th</a></button>
+        <button class="bg-purple l"><a href="/date/9/20/2015">Work Retreat</a></button>
         <button class="bg-brown l"><a href="/date/11/26/<%= Date.today.year %>">Thanksgiving</a></button>
         <button class="bg-green l"><a href="/date/11/3/2015">Dublin Conference</a></button>
         <button class="bg-orange l"><a href="/date/10/31/<%= Date.today.year %>">Halloween</a></button>
@@ -77,4 +78,3 @@
         <button class="bg-blue-grey l"><a href="/date/9/2/1945">End of WWII</a></button>
   </div>
 </div>
-    

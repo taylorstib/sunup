@@ -1,0 +1,19 @@
+<table>
+  <tbody class="zebra">
+    <tr>
+      <th>Events</th>
+      <th>Date</th>
+      <th>Difference</th>
+    </tr>
+    <tr>
+      <td>Today</td>
+      <td><%= @today.strftime('%a, %b %d, %Y') unless @today.nil? %></td>
+      <td>0</td>
+    </tr>
+    <% @dates.each do |date| %>
+      <tr>
+        <td><%= date[:event] %></td>
+        <td><%= date[:date].strftime('%a, %b %d, %Y')  %></td>
+        <td><%= day_difference_to_words((date[:date] - @today).to_i) %></td>
+      </tr>
+    <% end %>
