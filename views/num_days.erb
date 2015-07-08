@@ -1,11 +1,13 @@
 
       <h1>What date was <%= @num_days || "___" %> days ago...?</h1><br>
         <table class="full-width">
-          <tbody class="zebra">
+          <thead>
             <tr>
               <th>Label</th>
               <th>Date</th>
             </tr>
+          </thead>
+          <tbody class="zebra hover">
             <tr>
               <td>Today</td>
               <td><%= @today.strftime('%a, %b %d, %Y') unless @today.nil? %></td>

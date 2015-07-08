@@ -8,11 +8,13 @@
     <% end %>
 
     <table class="full-width">
-      <tbody class="zebra">
+      <thead>
         <tr>
           <th>Items</th>
           <th>Date</th>
         </tr>
+      </thead>
+      <tbody class="zebra hover">
         <tr>
           <td>Today</td>
           <td><%= @today.strftime('%a, %b %d, %Y') unless @today.nil? %></td>

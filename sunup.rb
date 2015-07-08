@@ -15,6 +15,7 @@ helpers ApplicationHelper
 configure :development do
   use BetterErrors::Middleware
   BetterErrors.application_root = __dir__
+  enable :logging
 end
 
 before do
@@ -28,6 +29,8 @@ end
 
 get '/all' do
   @dates = [
+    {event: 'Started Work',               date: Date.new(2015,3,5)},
+    {event: 'Got Pip',                    date: Date.new(2015,6,10)},
     {event: 'Cabo',                       date: Date.new(2015,7,21)},
     {event: 'Packer\'s First Preseason',  date: Date.new(2015,8,13)},
     {event: 'Wisonsin',                   date: Date.new(2015,9,4)},
@@ -41,6 +44,8 @@ get '/all' do
     {event: 'Dublin Conference',          date: Date.new(2015,11,3)},
     {event: 'Christmas',                  date: Date.new(2015,12,25)},
     {event: 'New Years',                  date: Date.new(2016,1,1)},
+    {event: 'Super Bowl',                 date: Date.new(2016,2,7)},
+    {event: 'Summer Olympics Brazil',     date: Date.new(2016,8,5)},
     ]
 
   erb :all_in_one, :locals => {:dates => @dates }
