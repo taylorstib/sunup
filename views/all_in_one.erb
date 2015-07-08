@@ -1,5 +1,5 @@
 <table>
-  <tbody class="zebra">
+  <tbody class="hover">
     <tr>
       <th>Events</th>
       <th>Date</th>
@@ -10,12 +10,15 @@
       <td>Today</td>
       <td><%= @today.strftime('%a, %b %d, %Y') unless @today.nil? %></td>
       <td>0</td>
+      <td>-</td>
     </tr>
     <% @dates.each do |date| %>
       <tr>
-        <td><strong><%= date[:event] %></strong></td>
+        <td><b><%= date[:event] %></b></td>
         <td><%= date[:date].strftime('%a, %b %d, %Y')  %></td>
         <td><%= day_difference_to_words((date[:date] - @today).to_i) %></td>
         <td><%= count_fridays(@today, date[:date]) %></td>
       </tr>
     <% end %>
+  </tbody>
+</table>

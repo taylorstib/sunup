@@ -9,3 +9,17 @@
 .light{
   color: #bbb;
 }
+
+td{
+  font-family: 'Roboto', sans-serif;
+}
+
+table.hover > *,
+table .hover > * {
+  transition: none;
+}
+
+table.hover > *:hover,
+table .hover > *:hover {
+  background: #ccc;
+}
