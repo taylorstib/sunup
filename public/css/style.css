@@ -10,16 +10,14 @@
   color: #bbb;
 }
 
+th{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
 td{
   font-family: 'Roboto', sans-serif;
 }
 
-table.hover > *,
-table .hover > * {
-  transition: none;
-}
-
-table.hover > *:hover,
-table .hover > *:hover {
-  background: #ccc;
+.bolder{
+  font-weight: 700;
 }

@@ -972,13 +972,8 @@ tr:last-child {
   background: #fff;
 }
 
-.hover > * {
-  -webkit-transition: all 250ms;
-  transition: all 250ms;
-}
-
 .hover > *:hover {
-  background: #e5f7ff;
+  background: #ccc;
 }
 
 hr {
