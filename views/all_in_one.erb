@@ -9,14 +9,14 @@
   </thead>
   <tbody class="hover zebra">
     <tr>
-      <td>Today</td>
-      <td><%= @today.strftime('%a, %b %d, %Y') unless @today.nil? %></td>
+      <td class="bolder">Today</td>
+      <td><%= @today.strftime('%a, %b %d, %Y') %></td>
       <td>0</td>
       <td>-</td>
     </tr>
     <% @dates.each do |date| %>
       <tr>
-        <td class="lighter"><%= date[:event] %></td>
+        <td class="bolder"><%= date[:event] %></td>
         <td><%= date[:date].strftime('%a, %b %d, %Y') %></td>
         <% if @today > date[:date] %>
           <td><%= day_difference_to_words((@today - date[:date]).to_i) %></td>
