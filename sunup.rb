@@ -8,10 +8,8 @@ require 'active_support/core_ext/numeric/conversions'
 require 'date'
 require 'better_errors' if development?
 require 'sinatra/json'
-require 'action_view'
 require_relative 'helpers/application_helper'
 
-include ActionView::Helpers::DateHelper
 helpers ApplicationHelper
 
 configure :development do
