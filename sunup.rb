@@ -31,6 +31,7 @@ get '/all' do
   @dates = [
     {event: 'Started Work',               date: Date.new(2015,3,5)},
     {event: 'Got Pip',                    date: Date.new(2015,6,10)},
+    {event: 'Today',                      date: Date.today},
     {event: 'Cabo',                       date: Date.new(2015,7,21)},
     {event: 'Packer\'s First Preseason',  date: Date.new(2015,8,13)},
     {event: 'Wisonsin',                   date: Date.new(2015,9,4)},

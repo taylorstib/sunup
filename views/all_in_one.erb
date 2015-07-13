@@ -8,12 +8,6 @@
     </tr>
   </thead>
   <tbody class="hover zebra">
-    <tr>
-      <td class="bolder">Today</td>
-      <td><%= @today.strftime('%a, %b %d, %Y') %></td>
-      <td>0</td>
-      <td>-</td>
-    </tr>
     <% @dates.each do |date| %>
       <tr>
         <td class="bolder"><%= date[:event] %></td>
