@@ -10,8 +10,8 @@
   <tbody class="hover zebra">
     <% @dates.each do |date| %>
       <tr>
-        <td class="bolder"><%= date[:event] %></td>
-        <td><%= date[:date].strftime('%a, %b %d, %Y') %></td>
+        <td><%= date[:event] %></td>
+        <td><%= date[:date].strftime('%a, %b %d') %></td>
         <% if @today > date[:date] %>
           <td><%= day_difference_to_words((@today - date[:date]).to_i) %></td>
         <% else %>

@@ -31,22 +31,26 @@ get '/all' do
   @dates = [
     {event: 'Started Work',               date: Date.new(2015,3,5)},
     {event: 'Got Pip',                    date: Date.new(2015,6,10)},
-    {event: 'Today',                      date: Date.today},
+    {event: 'Engagement',                 date: Date.new(2015,7,11)},
     {event: 'Cabo',                       date: Date.new(2015,7,21)},
+    {event: 'Today',                      date: Date.today},
     {event: 'Packer\'s First Preseason',  date: Date.new(2015,8,13)},
+    {event: 'Parents Cabo',               date: Date.new(2015,8,15)},
+    {event: 'UofA First Game',            date: Date.new(2015,9,3)},
     {event: 'Wisonsin',                   date: Date.new(2015,9,4)},
     {event: 'NFL First Game',             date: Date.new(2015,9,10)},
     {event: 'Work Retreat',               date: Date.new(2015,9,20)},
     {event: 'My Bday',                    date: Date.new(2015,10,7)},
-    {event: 'Kendall Bday',               date: Date.new(2015,10,12)},
-    {event: 'Hassan Bday',                date: Date.new(2015,10,13)},
+    {event: 'Kendall Bday',               date: Date.new(2015,10,13)},
+    {event: 'Hassan Bday',                date: Date.new(2015,10,12)},
     {event: 'Halloween',                  date: Date.new(2015,10,31)},
-    {event: 'Thanksgiving',               date: Date.new(2015,11,26)},
     {event: 'Dublin Conference',          date: Date.new(2015,11,3)},
+    {event: 'Thanksgiving',               date: Date.new(2015,11,26)},
     {event: 'Christmas',                  date: Date.new(2015,12,25)},
     {event: 'New Years',                  date: Date.new(2016,1,1)},
     {event: 'Super Bowl',                 date: Date.new(2016,2,7)},
-    {event: 'Summer Olympics Brazil',     date: Date.new(2016,8,5)},
+    {event: 'Summer Olympics Brazil',     date: Date.new(2016,8,5)}
+    # {event: 'NEW EVENT', date: Date.new()},
     ]
 
   erb :all_in_one, :locals => {:dates => @dates }
