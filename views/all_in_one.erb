@@ -4,7 +4,6 @@
       <th>Events</th>
       <th>Date</th>
       <th>Difference</th>
-      <th># of Fridays</th>
     </tr>
   </thead>
   <tbody class="hover zebra">
@@ -17,7 +16,6 @@
         <% else %>
           <td><%= day_difference_to_words((date[:date] - @today).to_i) %></td>
         <% end %>
-        <td><%= count_fridays(@today, date[:date]) %></td>
       </tr>
     <% end %>
   </tbody>

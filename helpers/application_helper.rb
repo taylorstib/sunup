@@ -11,6 +11,8 @@ module ApplicationHelper
       "#{diff / 7} weeks and #{diff.remainder(7)} day"
     elsif diff > 7
       "#{diff / 7} weeks and #{diff.remainder(7)} days"
+    elsif diff == 7
+      '7 days'
     elsif diff == 1
       "One Day"
     else
