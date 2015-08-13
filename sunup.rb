@@ -43,12 +43,15 @@ get '/all' do
     {event: 'My Bday',                    date: Date.new(2015,10,7)},
     {event: 'Kendall Bday',               date: Date.new(2015,10,13)},
     {event: 'Hassan Bday',                date: Date.new(2015,10,12)},
+    {event: 'Jake\'s Wedding',            date: Date.new(2015,10,23)},
     {event: 'Halloween',                  date: Date.new(2015,10,31)},
     {event: 'Dublin Conference',          date: Date.new(2015,11,3)},
     {event: 'Thanksgiving',               date: Date.new(2015,11,26)},
     {event: 'Christmas',                  date: Date.new(2015,12,25)},
     {event: 'New Years',                  date: Date.new(2016,1,1)},
     {event: 'Super Bowl',                 date: Date.new(2016,2,7)},
+    {event: 'M&B Wedding',                date: Date.new(2016,4,16)},
+    {event: 'Randy Wedding',              date: Date.new(2016,6,18)},
     {event: 'Summer Olympics Brazil',     date: Date.new(2016,8,5)}
     # {event: 'NEW EVENT', date: Date.new()},
     ]
