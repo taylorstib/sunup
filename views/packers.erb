@@ -1,0 +1,24 @@
+<table id="all-table">
+  <thead>
+    <tr>
+      <th>Opponent</th>
+      <th>Date</th>
+      <th>Relative</th>
+      <th>Location</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @games.each do |game| %>
+      <tr class= <%= row_color(game[:location]) %> >
+        <td><%= game[:opponent].titleize %></td>
+        <td><%= game[:date].strftime('%a, %b %d') %></td>
+        <% if @today > game[:date] %>
+          <td><%= day_difference_to_words((@today - game[:date]).to_i) %></td>
+        <% else %>
+          <td><%= day_difference_to_words((game[:date] - @today).to_i) %></td>
+        <% end %>
+        <td> <%= game[:location].to_s.titleize %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

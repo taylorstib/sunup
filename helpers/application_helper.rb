@@ -31,5 +31,13 @@ module ApplicationHelper
       fridays = fridays.count
     end
   end
+  
+  def row_color(location)
+    if location == :home
+      'bg-green'
+    else
+      'bg-blue-grey'
+    end
+  end
 
 end

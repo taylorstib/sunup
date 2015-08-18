@@ -22,6 +22,31 @@ before do
   @today = (Time.now - (3600*7)).to_date
 end
 
+before '*/packers' do
+  @games = [
+    {opponent: 'patriots', date: Date.new(2015,8,13), location: :away},
+    {opponent: 'steelers', date: Date.new(2015,8,23), location: :away},
+    {opponent: 'eagles', date: Date.new(2015,8,29), location: :home},
+    {opponent: 'saints', date: Date.new(2015,9,3), location: :home},
+    {opponent: 'bears', date: Date.new(2015,9,13), location: :away},
+    {opponent: 'seahawks', date: Date.new(2015,9,20), location: :home},
+    {opponent: 'chiefs', date: Date.new(2015,9,28), location: :home},
+    {opponent: '49ers', date: Date.new(2015,10,4), location: :away},
+    {opponent: 'rams', date: Date.new(2015,10,11), location: :home},
+    {opponent: 'chargers', date: Date.new(2015,10,18), location: :home},
+    {opponent: 'broncos', date: Date.new(2015,11,1), location: :away},
+    {opponent: 'panthers', date: Date.new(2015,11,8), location: :away},
+    {opponent: 'lions', date: Date.new(2015,11,15), location: :home},
+    {opponent: 'vikings', date: Date.new(2015,11,22), location: :away},
+    {opponent: 'bears', date: Date.new(2015,11,26), location: :home},
+    {opponent: 'lions', date: Date.new(2015,12,3), location: :away},
+    {opponent: 'cowboys', date: Date.new(2015,12,13), location: :home},
+    {opponent: 'raiders', date: Date.new(2015,12,20), location: :away},
+    {opponent: 'cardinals', date: Date.new(2015,12,27), location: :away},
+    {opponent: 'vikings', date: Date.new(2015,1,3), location: :home}
+  ]
+end
+
 get '/' do
   @today
   erb :index, :locals => { :today => @today, :thing => @thing }
@@ -33,7 +58,6 @@ get '/all' do
     {event: 'Got Pip',                    date: Date.new(2015,6,10)},
     {event: 'Engagement',                 date: Date.new(2015,7,11)},
     {event: 'Cabo',                       date: Date.new(2015,7,21)},
-    {event: 'Packer\'s First Preseason',  date: Date.new(2015,8,13)},
     {event: 'Parents Cabo',               date: Date.new(2015,8,15)},
     {event: 'Today',                      date: Date.today},
     {event: 'UofA First Game',            date: Date.new(2015,9,3)},
@@ -59,6 +83,10 @@ get '/all' do
     ]
 
   erb :all_in_one, :locals => {:dates => @dates }
+end
+
+get '/packers' do
+  erb :packers
 end
 
 get '/days' do
@@ -193,4 +221,9 @@ get '/api/date/:month/:day/:year' do
       @diff = (@date - @today).to_i
     end
   json date: "#{@date}", difference: "#{format_thousands(@diff)}"
+end
+
+get '/api/packers' do
+  content_type :json
+  @games.to_json
 end
