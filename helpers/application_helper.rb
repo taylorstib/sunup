@@ -8,9 +8,9 @@ module ApplicationHelper
     if diff > 365
       "#{diff / 365} years, #{day_difference_to_words(diff.remainder(365))}"
     elsif diff > 7 && diff.remainder(7) == 1
-      "#{diff / 7} weeks and #{diff.remainder(7)} day"
+      "#{diff / 7} weeks, #{diff.remainder(7)} day"
     elsif diff > 7
-      "#{diff / 7} weeks and #{diff.remainder(7)} days"
+      "#{diff / 7} weeks, #{diff.remainder(7)} days"
     elsif diff == 7
       '7 days'
     elsif diff == 1

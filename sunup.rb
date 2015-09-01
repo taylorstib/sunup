@@ -24,9 +24,9 @@ end
 
 before '*/packers' do
   @games = [
-    {opponent: 'patriots', date: Date.new(2015,8,13), location: :away},
-    {opponent: 'steelers', date: Date.new(2015,8,23), location: :away},
-    {opponent: 'eagles', date: Date.new(2015,8,29), location: :home},
+    {opponent: 'patriots', date: Date.new(2015,8,13), location: :away, result: "W 22-11"},
+    {opponent: 'steelers', date: Date.new(2015,8,23), location: :away, result: "L 19-24"},
+    {opponent: 'eagles', date: Date.new(2015,8,29), location: :home,   result: "L 39-26"},
     {opponent: 'saints', date: Date.new(2015,9,3), location: :home},
     {opponent: 'bears', date: Date.new(2015,9,13), location: :away},
     {opponent: 'seahawks', date: Date.new(2015,9,20), location: :home},

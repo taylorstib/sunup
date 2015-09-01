@@ -25,3 +25,7 @@ td{
 button a:hover {
   text-decoration: none;
 }
+
+#all-table tr.bg-blue-grey {
+  background-color: rgba(96, 125, 139, 0.5);
+}
