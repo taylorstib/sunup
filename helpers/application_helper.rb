@@ -14,7 +14,7 @@ module ApplicationHelper
     elsif diff == 7
       '7 days'
     elsif diff == 1
-      "One Day"
+      "1 Day"
     else
       "#{diff.remainder(7)} days"
     end

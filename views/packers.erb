@@ -1,3 +1,27 @@
+<table id="record">
+  <% wins = 0 %>
+  <% losses = 0 %>
+  <% games = 0 %>
+  <thead>
+    <tr>
+      <th>Games</th>
+      <th>Wins</th>
+      <th>Losses</th>
+      <th>Percent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <% @games.each{|game| if game.has_key?(:win) then games += 1 end} %>
+        <% @games.each{|game| if game[:win] == true then wins += 1 end} %>
+        <% @games.each{|game| if game[:win] == false then losses += 1 end} %>
+        <td><%= games %></td>
+        <td><%= wins %></td>
+        <td><%= losses %></td>
+        <td><%= wins / (wins + losses).to_f %></td>
+    </tr>
+  </tbody>
+</table>
 <table id="all-table">
   <thead>
     <tr>
