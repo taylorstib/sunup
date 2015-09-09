@@ -66,6 +66,7 @@ get '/all' do
     {event: 'NFL First Game',             date: Date.new(2015,9,10)},
     {event: 'Packer\'s first Reg Game',   date: Date.new(2015,9,13)},
     {event: 'Work Retreat',               date: Date.new(2015,9,20)},
+    {event: 'Matt\'s Bday',               date: Date.new(2015,9,25)},
     {event: 'My Bday',                    date: Date.new(2015,10,7)},
     {event: 'Kendall Bday',               date: Date.new(2015,10,13)},
     {event: 'Hassan Bday',                date: Date.new(2015,10,12)},
@@ -77,7 +78,7 @@ get '/all' do
     {event: 'Christmas',                  date: Date.new(2015,12,25)},
     {event: 'New Years',                  date: Date.new(2016,1,1)},
     {event: 'Super Bowl',                 date: Date.new(2016,2,7)},
-    {event: 'Matts Match Day',            date: Date.new(2016,3,18)},
+    {event: 'Matt\'s Match Day',          date: Date.new(2016,3,18)},
     {event: 'M&B Wedding',                date: Date.new(2016,4,16)},
     {event: 'Randy Wedding',              date: Date.new(2016,6,18)},
     {event: 'Summer Olympics Brazil',     date: Date.new(2016,8,5)}
