@@ -28,7 +28,7 @@
       <th>Opponent</th>
       <th>Date</th>
       <th>Relative</th>
-      <th>Location</th>
+      <!-- <th>Location</th> -->
       <th>Result</th>
     </tr>
   </thead>
@@ -42,7 +42,7 @@
         <% else %>
           <td><%= day_difference_to_words((game[:date] - @today).to_i) %></td>
         <% end %>
-        <td> <%= game[:location].to_s.titleize %> </td>
+        <!-- <td> <%= game[:location].to_s.titleize %> </td> -->
         <td><%= game[:result] ? game[:result] : "-" %></td>
       </tr>
     <% end %>

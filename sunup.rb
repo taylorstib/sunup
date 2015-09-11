@@ -24,10 +24,10 @@ end
 
 before '*/packers' do
   @games = [
-    {opponent: 'patriots', date: Date.new(2015,8,13), location: :away, result: "W 22-11", win: true},
-    {opponent: 'steelers', date: Date.new(2015,8,23), location: :away, result: "L 19-24", win: false},
-    {opponent: 'eagles', date: Date.new(2015,8,29), location: :home,   result: "L 39-26", win: false},
-    {opponent: 'saints', date: Date.new(2015,9,3), location: :home,    result: "W 38-10", win: true},
+    # {opponent: 'patriots', date: Date.new(2015,8,13), location: :away, result: "W 22-11", win: true},
+    # {opponent: 'steelers', date: Date.new(2015,8,23), location: :away, result: "L 19-24", win: false},
+    # {opponent: 'eagles', date: Date.new(2015,8,29), location: :home,   result: "L 39-26", win: false},
+    # {opponent: 'saints', date: Date.new(2015,9,3), location: :home,    result: "W 38-10", win: true},
     {opponent: 'bears', date: Date.new(2015,9,13), location: :away},
     {opponent: 'seahawks', date: Date.new(2015,9,20), location: :home},
     {opponent: 'chiefs', date: Date.new(2015,9,28), location: :home},
@@ -47,6 +47,51 @@ before '*/packers' do
   ]
 end
 
+before '*/mnf' do
+  @games = [
+    {date: Date.new(2015,9,14), home: 'Falcons', away: 'Eagles', result: nil },
+    {date: Date.new(2015,9,14), home: '49ers', away: 'Vikings', result: nil },
+    {date: Date.new(2015,9,21), home: 'Colts', away: 'Jets', result: nil },
+    {date: Date.new(2015,9,28), home: 'Packers', away: 'Chiefs', result: nil },
+    {date: Date.new(2015,10,5), home: 'Seahawks', away: 'Lions', result: nil },
+    {date: Date.new(2015,10,12), home: 'Chargers', away: 'Steelers', result: nil },
+    {date: Date.new(2015,10,19), home: 'Eagles', away: 'Giants', result: nil },
+    {date: Date.new(2015,10,26), home: 'Cardinals', away: 'Ravens', result: nil },
+    {date: Date.new(2015,11,2), home: 'Panthers', away: 'Colts', result: nil },
+    {date: Date.new(2015,11,9), home: 'Chargers', away: 'Bears', result: nil },
+    {date: Date.new(2015,11,16), home: 'Bengals', away: 'Texans', result: nil },
+    {date: Date.new(2015,11,23), home: 'Patriots', away: 'Bills', result: nil },
+    {date: Date.new(2015,11,30), home: 'Browns', away: 'Ravens', result: nil },
+    {date: Date.new(2015,12,7), home: 'Redskins', away: 'Cowboys', result: nil },
+    {date: Date.new(2015,12,14), home: 'Dolphins', away: 'Giants', result: nil },
+    {date: Date.new(2015,12,21), home: 'Saints', away: 'Lions', result: nil },
+    {date: Date.new(2015,12,28), home: 'Broncos', away: 'Bengals', result: nil }
+  ]
+end
+
+before '*/snf' do
+  @games = [
+    {date: Date.new(2015,9,10), home: 'Patriots', away: 'Steelers', result: nil },
+    {date: Date.new(2015,9,13), home: 'Cowboys', away: 'Giants', result: nil },
+    {date: Date.new(2015,9,20), home: 'Packers', away: 'Seahawks', result: nil },
+    {date: Date.new(2015,9,27), home: 'Lions', away: 'Broncos', result: nil },
+    {date: Date.new(2015,10,4), home: 'Saints', away: 'Cowboys', result: nil },
+    {date: Date.new(2015,10,11), home: 'Giants', away: '49ers', result: nil },
+    {date: Date.new(2015,10,18), home: 'Colts', away: 'Patriots', result: nil },
+    {date: Date.new(2015,10,25), home: 'Panthers', away: 'Eagles', result: nil },
+    {date: Date.new(2015,11,1), home: 'Broncos', away: 'Packers', result: nil },
+    {date: Date.new(2015,11,8), home: 'Cowboys', away: 'Eagles', result: nil },
+    {date: Date.new(2015,11,15), home: 'Seahawks', away: 'Cardinals', result: nil },
+    {date: Date.new(2015,11,22), home: 'Chargers', away: 'Chiefs', result: nil },
+    {date: Date.new(2015,11,26), home: 'Packers', away: 'Bears', result: nil },
+    {date: Date.new(2015,11,29), home: 'Broncos', away: 'Patriots', result: nil },
+    {date: Date.new(2015,12,6), home: 'Steelers', away: 'Colts', result: nil },
+    {date: Date.new(2015,12,13), home: 'Ravens', away: 'Seahawks', result: nil },
+    {date: Date.new(2015,12,20), home: '49ers', away: 'Bengals', result: nil },
+    {date: Date.new(2015,12,27), home: 'Ravens', away: 'Steelers', result: nil }
+  ]
+end
+
 get '/' do
   @today
   erb :index, :locals => { :today => @today, :thing => @thing }
@@ -54,18 +99,10 @@ end
 
 get '/all' do
   @dates = [
-    {event: 'Started Work',               date: Date.new(2015,3,5)},
-    {event: 'Got Pip',                    date: Date.new(2015,6,10)},
-    {event: 'Engagement',                 date: Date.new(2015,7,11)},
-    {event: 'Cabo',                       date: Date.new(2015,7,21)},
-    {event: 'Parents Cabo',               date: Date.new(2015,8,15)},
-    {event: 'UofA First Game',            date: Date.new(2015,9,3)},
-    {event: 'Red Cross',                  date: Date.new(2015,9,3)},
-    {event: 'Wisonsin',                   date: Date.new(2015,9,4)},
     {event: 'Today',                      date: Date.today},
     {event: 'NFL First Game',             date: Date.new(2015,9,10)},
     {event: 'Packer\'s first Reg Game',   date: Date.new(2015,9,13)},
-    {event: 'Work Retreat',               date: Date.new(2015,9,20)},
+    {event: 'Work Retreat',               date: Date.new(2015,9,11)},
     {event: 'Matt\'s Bday',               date: Date.new(2015,9,25)},
     {event: 'My Bday',                    date: Date.new(2015,10,7)},
     {event: 'Kendall Bday',               date: Date.new(2015,10,13)},
@@ -84,12 +121,30 @@ get '/all' do
     {event: 'Summer Olympics Brazil',     date: Date.new(2016,8,5)}
     # {event: 'NEW EVENT', date: Date.new()},
     ]
+  @past_dates = [
+    {event: 'Started Work',               date: Date.new(2015,3,5)},
+    {event: 'Got Pip',                    date: Date.new(2015,6,10)},
+    {event: 'Engagement',                 date: Date.new(2015,7,11)},
+    {event: 'Cabo',                       date: Date.new(2015,7,21)},
+    {event: 'Parents Cabo',               date: Date.new(2015,8,15)},
+    {event: 'UofA First Game',            date: Date.new(2015,9,3)},
+    {event: 'Red Cross',                  date: Date.new(2015,9,3)},
+    {event: 'Wisonsin',                   date: Date.new(2015,9,4)}
+  ]
 
   erb :all_in_one, :locals => {:dates => @dates }
 end
 
 get '/packers' do
   erb :packers
+end
+
+get '/mnf' do
+  erb :mnf
+end
+
+get '/snf' do
+  erb :snf
 end
 
 get '/days' do

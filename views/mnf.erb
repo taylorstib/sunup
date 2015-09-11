@@ -1,0 +1,22 @@
+<table id="mnf-table">
+  <thead>
+    <th>Date</th>
+    <th>Home</th>
+    <th>Away</th>
+    <th>Result</th>
+  </thead>
+  <tbody>
+    <% @games.each do |game| %>
+      <tr class= <%= packers_row(game[:home], game[:away]) %> >
+        <td class="bg-light-blue"> <%= game[:date].strftime("%b %d") %> </td>
+        <td> <%= game[:home] %> </td>
+        <td> <%= game[:away] %> </td>
+        <% if game[:result] %>
+          <td><%= game[:result] %></td>
+        <% else %>
+          <td><%= day_difference_to_words((game[:date] - @today).to_i) + " away" %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

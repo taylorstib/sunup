@@ -20,3 +20,21 @@
     <% end %>
   </tbody>
 </table>
+<table id="past-table">
+  <thead>
+    <tr>
+      <th>Events</th>
+      <th>Date</th>
+      <th>Difference</th>
+    </tr>
+  </thead>
+  <tbody class="hover zebra">
+    <% @past_dates.each do |date| %>
+      <tr>
+        <td><%= date[:event] %></td>
+        <td><%= date[:date].strftime('%a, %b %d') %></td>
+        <td><%= day_difference_to_words((@today - date[:date]).to_i) + ' ago'%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -34,9 +34,17 @@ module ApplicationHelper
   
   def row_color(location)
     if location == :home
-      'bg-green'
+      'bg-yellow'
     else
       'bg-blue-grey'
+    end
+  end
+  
+  def packers_row(home, away)
+    if home == "Packers" || away == "Packers"
+      "bg-yellow"
+    else
+      ''
     end
   end
 

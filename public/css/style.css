@@ -29,3 +29,7 @@ button a:hover {
 #all-table tr.bg-blue-grey {
   background-color: rgba(96, 125, 139, 0.5);
 }
+
+tr.bg-yellow {
+  color: black
+}
