@@ -28,7 +28,7 @@ before '*/packers' do
     # {opponent: 'steelers', date: Date.new(2015,8,23), location: :away, result: "L 19-24", win: false},
     # {opponent: 'eagles', date: Date.new(2015,8,29), location: :home,   result: "L 39-26", win: false},
     # {opponent: 'saints', date: Date.new(2015,9,3), location: :home,    result: "W 38-10", win: true},
-    {opponent: 'bears', date: Date.new(2015,9,13), location: :away},
+    {opponent: 'bears', date: Date.new(2015,9,13), location: :away, result: 'W 31 - 23', win: true},
     {opponent: 'seahawks', date: Date.new(2015,9,20), location: :home},
     {opponent: 'chiefs', date: Date.new(2015,9,28), location: :home},
     {opponent: '49ers', date: Date.new(2015,10,4), location: :away},
@@ -49,8 +49,8 @@ end
 
 before '*/mnf' do
   @games = [
-    {date: Date.new(2015,9,14), home: 'Falcons', away: 'Eagles', result: nil },
-    {date: Date.new(2015,9,14), home: '49ers', away: 'Vikings', result: nil },
+    {date: Date.new(2015,9,14), home: 'Falcons*', away: 'Eagles', result: '26 - 24' },
+    {date: Date.new(2015,9,14), home: '49ers*', away: 'Vikings', result: '20 - 3' },
     {date: Date.new(2015,9,21), home: 'Colts', away: 'Jets', result: nil },
     {date: Date.new(2015,9,28), home: 'Packers', away: 'Chiefs', result: nil },
     {date: Date.new(2015,10,5), home: 'Seahawks', away: 'Lions', result: nil },
@@ -67,12 +67,18 @@ before '*/mnf' do
     {date: Date.new(2015,12,21), home: 'Saints', away: 'Lions', result: nil },
     {date: Date.new(2015,12,28), home: 'Broncos', away: 'Bengals', result: nil }
   ]
+  # @teams = []
+  # @games.each do |game|
+  #   @teams.push(game[:home])
+  #   @teams.push(game[:away])
+  # end
+  # puts "#{@teams.uniq.count} unique teams"
 end
 
 before '*/snf' do
   @games = [
-    {date: Date.new(2015,9,10), home: 'Patriots', away: 'Steelers', result: nil },
-    {date: Date.new(2015,9,13), home: 'Cowboys', away: 'Giants', result: nil },
+    {date: Date.new(2015,9,10), home: 'Patriots*', away: 'Steelers', result: '28 - 21' },
+    {date: Date.new(2015,9,13), home: 'Cowboys*', away: 'Giants', result: '27 - 26' },
     {date: Date.new(2015,9,20), home: 'Packers', away: 'Seahawks', result: nil },
     {date: Date.new(2015,9,27), home: 'Lions', away: 'Broncos', result: nil },
     {date: Date.new(2015,10,4), home: 'Saints', away: 'Cowboys', result: nil },
@@ -90,6 +96,12 @@ before '*/snf' do
     {date: Date.new(2015,12,20), home: '49ers', away: 'Bengals', result: nil },
     {date: Date.new(2015,12,27), home: 'Ravens', away: 'Steelers', result: nil }
   ]
+  # @teams = []
+  # @games.each do |game|
+  #   @teams.push(game[:home])
+  #   @teams.push(game[:away])
+  # end
+  # puts "#{@teams.uniq.count} unique teams"
 end
 
 get '/' do
@@ -100,9 +112,6 @@ end
 get '/all' do
   @dates = [
     {event: 'Today',                      date: Date.today},
-    {event: 'NFL First Game',             date: Date.new(2015,9,10)},
-    {event: 'Packer\'s first Reg Game',   date: Date.new(2015,9,13)},
-    {event: 'Work Retreat',               date: Date.new(2015,9,11)},
     {event: 'Matt\'s Bday',               date: Date.new(2015,9,25)},
     {event: 'My Bday',                    date: Date.new(2015,10,7)},
     {event: 'Kendall Bday',               date: Date.new(2015,10,13)},
@@ -129,7 +138,10 @@ get '/all' do
     {event: 'Parents Cabo',               date: Date.new(2015,8,15)},
     {event: 'UofA First Game',            date: Date.new(2015,9,3)},
     {event: 'Red Cross',                  date: Date.new(2015,9,3)},
-    {event: 'Wisonsin',                   date: Date.new(2015,9,4)}
+    {event: 'Wisonsin',                   date: Date.new(2015,9,4)},
+    {event: 'NFL First Game',             date: Date.new(2015,9,10)},
+    {event: 'Packer\'s first Reg Game',   date: Date.new(2015,9,13)},
+    {event: 'Work Retreat',               date: Date.new(2015,9,11)}
   ]
 
   erb :all_in_one, :locals => {:dates => @dates }
@@ -282,6 +294,16 @@ get '/api/date/:month/:day/:year' do
 end
 
 get '/api/packers' do
+  content_type :json
+  @games.to_json
+end
+
+get '/api/mnf' do
+  content_type :json
+  @games.to_json
+end
+
+get '/api/snf' do
   content_type :json
   @games.to_json
 end
