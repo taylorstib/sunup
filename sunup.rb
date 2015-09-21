@@ -29,7 +29,7 @@ before '*/packers' do
     # {opponent: 'eagles', date: Date.new(2015,8,29), location: :home,   result: "L 39-26", win: false},
     # {opponent: 'saints', date: Date.new(2015,9,3), location: :home,    result: "W 38-10", win: true},
     {opponent: 'bears', date: Date.new(2015,9,13), location: :away, result: 'W 31 - 23', win: true},
-    {opponent: 'seahawks', date: Date.new(2015,9,20), location: :home},
+    {opponent: 'seahawks', date: Date.new(2015,9,20), location: :home, result: 'W 27 - 17', win: true},
     {opponent: 'chiefs', date: Date.new(2015,9,28), location: :home},
     {opponent: '49ers', date: Date.new(2015,10,4), location: :away},
     {opponent: 'rams', date: Date.new(2015,10,11), location: :home},
@@ -79,7 +79,7 @@ before '*/snf' do
   @games = [
     {date: Date.new(2015,9,10), home: 'Patriots*', away: 'Steelers', result: '28 - 21' },
     {date: Date.new(2015,9,13), home: 'Cowboys*', away: 'Giants', result: '27 - 26' },
-    {date: Date.new(2015,9,20), home: 'Packers', away: 'Seahawks', result: nil },
+    {date: Date.new(2015,9,20), home: 'Packers*', away: 'Seahawks', result: '27 - 17' },
     {date: Date.new(2015,9,27), home: 'Lions', away: 'Broncos', result: nil },
     {date: Date.new(2015,10,4), home: 'Saints', away: 'Cowboys', result: nil },
     {date: Date.new(2015,10,11), home: 'Giants', away: '49ers', result: nil },

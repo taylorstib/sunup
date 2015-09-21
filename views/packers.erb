@@ -36,7 +36,7 @@
       <tr class= <%= row_color(game[:location]) %> >
         <td><%= game[:opponent].titleize %></td>
         <td><%= game[:date].strftime('%a, %b %d') %></td>
-        <% if @today > game[:date] %>
+        <% if @today > game[:date] || game.has_key?(:win)%>
           <td><%= game[:result] ? game[:result] : "-" %></td>
         <% else %>
           <td><%= day_difference_to_words((game[:date] - @today).to_i) %></td>
