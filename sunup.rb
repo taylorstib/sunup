@@ -24,11 +24,7 @@ end
 
 before '*/packers' do
   @games = [
-    # {opponent: 'patriots', date: Date.new(2015,8,13), location: :away, result: "W 22-11", win: true},
-    # {opponent: 'steelers', date: Date.new(2015,8,23), location: :away, result: "L 19-24", win: false},
-    # {opponent: 'eagles', date: Date.new(2015,8,29), location: :home,   result: "L 39-26", win: false},
-    # {opponent: 'saints', date: Date.new(2015,9,3), location: :home,    result: "W 38-10", win: true},
-    {opponent: 'bears', date: Date.new(2015,9,13), location: :away, result: 'W 31 - 23', win: true},
+    {opponent: 'bears', date: Date.new(2015,9,13), location: :away,    result: 'W 31 - 23', win: true},
     {opponent: 'seahawks', date: Date.new(2015,9,20), location: :home, result: 'W 27 - 17', win: true},
     {opponent: 'chiefs', date: Date.new(2015,9,28), location: :home},
     {opponent: '49ers', date: Date.new(2015,10,4), location: :away},
@@ -49,23 +45,23 @@ end
 
 before '*/mnf' do
   @games = [
-    {date: Date.new(2015,9,14), home: 'Falcons*', away: 'Eagles', result: '26 - 24' },
-    {date: Date.new(2015,9,14), home: '49ers*', away: 'Vikings', result: '20 - 3' },
-    {date: Date.new(2015,9,21), home: 'Colts', away: 'Jets', result: nil },
-    {date: Date.new(2015,9,28), home: 'Packers', away: 'Chiefs', result: nil },
-    {date: Date.new(2015,10,5), home: 'Seahawks', away: 'Lions', result: nil },
+    {date: Date.new(2015,9,14), home: 'Falcons*', away: 'Eagles',    result: '26 - 24' },
+    {date: Date.new(2015,9,14), home: '49ers*', away: 'Vikings',     result: '20 - 3' },
+    {date: Date.new(2015,9,21), home: 'Colts', away: 'Jets*',        result: '7 - 20' },
+    {date: Date.new(2015,9,28), home: 'Packers', away: 'Chiefs',     result: nil },
+    {date: Date.new(2015,10,5), home: 'Seahawks', away: 'Lions',     result: nil },
     {date: Date.new(2015,10,12), home: 'Chargers', away: 'Steelers', result: nil },
-    {date: Date.new(2015,10,19), home: 'Eagles', away: 'Giants', result: nil },
-    {date: Date.new(2015,10,26), home: 'Cardinals', away: 'Ravens', result: nil },
-    {date: Date.new(2015,11,2), home: 'Panthers', away: 'Colts', result: nil },
-    {date: Date.new(2015,11,9), home: 'Chargers', away: 'Bears', result: nil },
-    {date: Date.new(2015,11,16), home: 'Bengals', away: 'Texans', result: nil },
-    {date: Date.new(2015,11,23), home: 'Patriots', away: 'Bills', result: nil },
-    {date: Date.new(2015,11,30), home: 'Browns', away: 'Ravens', result: nil },
-    {date: Date.new(2015,12,7), home: 'Redskins', away: 'Cowboys', result: nil },
-    {date: Date.new(2015,12,14), home: 'Dolphins', away: 'Giants', result: nil },
-    {date: Date.new(2015,12,21), home: 'Saints', away: 'Lions', result: nil },
-    {date: Date.new(2015,12,28), home: 'Broncos', away: 'Bengals', result: nil }
+    {date: Date.new(2015,10,19), home: 'Eagles', away: 'Giants',     result: nil },
+    {date: Date.new(2015,10,26), home: 'Cardinals', away: 'Ravens',  result: nil },
+    {date: Date.new(2015,11,2), home: 'Panthers', away: 'Colts',     result: nil },
+    {date: Date.new(2015,11,9), home: 'Chargers', away: 'Bears',     result: nil },
+    {date: Date.new(2015,11,16), home: 'Bengals', away: 'Texans',    result: nil },
+    {date: Date.new(2015,11,23), home: 'Patriots', away: 'Bills',    result: nil },
+    {date: Date.new(2015,11,30), home: 'Browns', away: 'Ravens',     result: nil },
+    {date: Date.new(2015,12,7), home: 'Redskins', away: 'Cowboys',   result: nil },
+    {date: Date.new(2015,12,14), home: 'Dolphins', away: 'Giants',   result: nil },
+    {date: Date.new(2015,12,21), home: 'Saints', away: 'Lions',      result: nil },
+    {date: Date.new(2015,12,28), home: 'Broncos', away: 'Bengals',   result: nil }
   ]
   # @teams = []
   # @games.each do |game|
@@ -77,24 +73,24 @@ end
 
 before '*/snf' do
   @games = [
-    {date: Date.new(2015,9,10), home: 'Patriots*', away: 'Steelers', result: '28 - 21' },
-    {date: Date.new(2015,9,13), home: 'Cowboys*', away: 'Giants', result: '27 - 26' },
-    {date: Date.new(2015,9,20), home: 'Packers*', away: 'Seahawks', result: '27 - 17' },
-    {date: Date.new(2015,9,27), home: 'Lions', away: 'Broncos', result: nil },
-    {date: Date.new(2015,10,4), home: 'Saints', away: 'Cowboys', result: nil },
-    {date: Date.new(2015,10,11), home: 'Giants', away: '49ers', result: nil },
-    {date: Date.new(2015,10,18), home: 'Colts', away: 'Patriots', result: nil },
-    {date: Date.new(2015,10,25), home: 'Panthers', away: 'Eagles', result: nil },
-    {date: Date.new(2015,11,1), home: 'Broncos', away: 'Packers', result: nil },
-    {date: Date.new(2015,11,8), home: 'Cowboys', away: 'Eagles', result: nil },
+    {date: Date.new(2015,9,10), home: 'Patriots*', away: 'Steelers',  result: '28 - 21' },
+    {date: Date.new(2015,9,13), home: 'Cowboys*', away: 'Giants',     result: '27 - 26' },
+    {date: Date.new(2015,9,20), home: 'Packers*', away: 'Seahawks',   result: '27 - 17' },
+    {date: Date.new(2015,9,27), home: 'Lions', away: 'Broncos',       result: nil },
+    {date: Date.new(2015,10,4), home: 'Saints', away: 'Cowboys',      result: nil },
+    {date: Date.new(2015,10,11), home: 'Giants', away: '49ers',       result: nil },
+    {date: Date.new(2015,10,18), home: 'Colts', away: 'Patriots',     result: nil },
+    {date: Date.new(2015,10,25), home: 'Panthers', away: 'Eagles',    result: nil },
+    {date: Date.new(2015,11,1), home: 'Broncos', away: 'Packers',     result: nil },
+    {date: Date.new(2015,11,8), home: 'Cowboys', away: 'Eagles',      result: nil },
     {date: Date.new(2015,11,15), home: 'Seahawks', away: 'Cardinals', result: nil },
-    {date: Date.new(2015,11,22), home: 'Chargers', away: 'Chiefs', result: nil },
-    {date: Date.new(2015,11,26), home: 'Packers', away: 'Bears', result: nil },
-    {date: Date.new(2015,11,29), home: 'Broncos', away: 'Patriots', result: nil },
-    {date: Date.new(2015,12,6), home: 'Steelers', away: 'Colts', result: nil },
-    {date: Date.new(2015,12,13), home: 'Ravens', away: 'Seahawks', result: nil },
-    {date: Date.new(2015,12,20), home: '49ers', away: 'Bengals', result: nil },
-    {date: Date.new(2015,12,27), home: 'Ravens', away: 'Steelers', result: nil }
+    {date: Date.new(2015,11,22), home: 'Chargers', away: 'Chiefs',    result: nil },
+    {date: Date.new(2015,11,26), home: 'Packers', away: 'Bears',      result: nil },
+    {date: Date.new(2015,11,29), home: 'Broncos', away: 'Patriots',   result: nil },
+    {date: Date.new(2015,12,6), home: 'Steelers', away: 'Colts',      result: nil },
+    {date: Date.new(2015,12,13), home: 'Ravens', away: 'Seahawks',    result: nil },
+    {date: Date.new(2015,12,20), home: '49ers', away: 'Bengals',      result: nil },
+    {date: Date.new(2015,12,27), home: 'Ravens', away: 'Steelers',    result: nil }
   ]
   # @teams = []
   # @games.each do |game|
