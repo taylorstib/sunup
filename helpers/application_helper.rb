@@ -36,12 +36,12 @@ module ApplicationHelper
     if location == :home
       'bg-yellow'
     else
-      'bg-blue-grey'
+      ''
     end
   end
   
   def packers_row(home, away)
-    if home == "Packers" || away == "Packers"
+    if home.match("Packers") || away.match("Packers")
       "bg-yellow"
     else
       ''

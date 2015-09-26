@@ -100,6 +100,27 @@ before '*/snf' do
   # puts "#{@teams.uniq.count} unique teams"
 end
 
+before '*/tnf' do
+  @games = [
+    {date: Date.new(2015,9,17), home: 'Chiefs', away: 'Broncos*',    result: '31 - 24' },
+    {date: Date.new(2015,9,24), home: 'Giants*', away: 'Redskins',   result: '21 - 32' },
+    {date: Date.new(2015,10,1), home: 'Steelers', away: 'Ravens',    result: nil },
+    {date: Date.new(2015,10,8), home: 'Texans', away: 'Colts',       result: nil },
+    {date: Date.new(2015,10,15), home: 'Saints', away: 'Falcons',    result: nil },
+    {date: Date.new(2015,10,22), home: '49ers', away: 'Seahawks',    result: nil },
+    {date: Date.new(2015,10,29), home: 'Patriots', away: 'Dolphins', result: nil },
+    {date: Date.new(2015,11,5), home: 'Bengals', away: 'Browns',     result: nil },
+    {date: Date.new(2015,11,12), home: 'Jets', away: 'Bills',        result: nil },
+    {date: Date.new(2015,11,19), home: 'Jaguars', away: 'Titans',    result: nil },
+    {date: Date.new(2015,12,3), home: 'Lions', away: 'Packers',      result: nil },
+    {date: Date.new(2015,12,10), home: 'Cardinals', away: 'Vikings', result: nil },
+    {date: Date.new(2015,12,17), home: 'Rams', away: 'Buccaneers',   result: nil },
+    {date: Date.new(2015,12,19), home: 'Cowboys', away: 'Jets',      result: nil },
+    {date: Date.new(2015,12,24), home: 'Raiders', away: 'Chargers',  result: nil },
+    {date: Date.new(2015,12,26), home: 'Eagles', away: 'Redskins',   result: nil }
+  ]
+end
+
 get '/' do
   @today
   erb :index, :locals => { :today => @today, :thing => @thing }
@@ -153,6 +174,10 @@ end
 
 get '/snf' do
   erb :snf
+end
+
+get '/tnf' do
+  erb :tnf
 end
 
 get '/days' do
