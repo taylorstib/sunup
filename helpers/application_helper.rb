@@ -34,7 +34,7 @@ module ApplicationHelper
   
   def row_color(location)
     if location == :home
-      'bg-yellow'
+      'bg-green'
     else
       ''
     end

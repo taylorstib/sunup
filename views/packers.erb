@@ -22,25 +22,28 @@
     </tr>
   </tbody>
 </table>
+
+
 <table id="all-table">
   <thead>
     <tr>
       <th>Opponent</th>
       <th>Date</th>
       <th>Relative/Result</th>
-      <!-- <th>Location</th> -->
+      <th>Prime Time</th>
     </tr>
   </thead>
   <tbody>
     <% @games.each do |game| %>
-      <tr class= <%= row_color(game[:location]) %> >
-        <td><%= game[:opponent].titleize %></td>
+      <tr>
+        <td class="bg-light-blue"><%= game[:location] == :home ? game[:opponent].titleize : '@ ' + game[:opponent].titleize %></td>
         <td><%= game[:date].strftime('%a, %b %d') %></td>
         <% if @today > game[:date] || game.has_key?(:win)%>
           <td><%= game[:result] ? game[:result] : "-" %></td>
         <% else %>
           <td><%= day_difference_to_words((game[:date] - @today).to_i) %></td>
         <% end %>
+        <td><%= game[:prime] ? game[:prime] : '' %></td>
       </tr>
     <% end %>
   </tbody>
