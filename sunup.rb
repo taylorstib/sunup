@@ -29,7 +29,7 @@ before '*/packers' do
     {opponent: 'chiefs', date: Date.new(2015,9,28), location: :home,   result: 'W 38 - 28', win: true, prime: 'Monday Night'},
     {opponent: '49ers', date: Date.new(2015,10,4), location: :away,    result: 'W 17 - 3',  win: true},
     {opponent: 'rams', date: Date.new(2015,10,11), location: :home,    result: 'W 24 - 10', win: true},
-    {opponent: 'chargers', date: Date.new(2015,10,18), location: :home},
+    {opponent: 'chargers', date: Date.new(2015,10,18), location: :home, result: 'W 27 - 20', win: true},
     {opponent: 'broncos', date: Date.new(2015,11,1), location: :away,                                  prime: "Sunday Night"},
     {opponent: 'panthers', date: Date.new(2015,11,8), location: :away},
     {opponent: 'lions', date: Date.new(2015,11,15), location: :home},
