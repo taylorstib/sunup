@@ -129,10 +129,6 @@ end
 get '/all' do
   @dates = [
     {event: 'Today',                      date: Date.today},
-    {event: 'Kendall Bday',               date: Date.new(2015,10,13)},
-    {event: 'Hassan Bday',                date: Date.new(2015,10,12)},
-    {event: 'Jake\'s Wedding',            date: Date.new(2015,10,23)},
-    {event: 'Next Red Cross',             date: Date.new(2015,10,29)},
     {event: 'Halloween',                  date: Date.new(2015,10,31)},
     {event: 'Dublin Conference',          date: Date.new(2015,11,3)},
     {event: 'Thanksgiving',               date: Date.new(2015,11,26)},
@@ -160,6 +156,10 @@ get '/all' do
     {event: 'Work Retreat',               date: Date.new(2015,9,11)},
     {event: 'Matt\'s Bday',               date: Date.new(2015,9,25)},
     {event: 'My Bday',                    date: Date.new(2015,10,7)},
+    {event: 'Kendall Bday',               date: Date.new(2015,10,13)},
+    {event: 'Hassan Bday',                date: Date.new(2015,10,12)},
+    {event: 'Jake\'s Wedding',            date: Date.new(2015,10,23)},
+    {event: 'Next Red Cross',             date: Date.new(2015,10,29)}
   ]
 
   erb :all_in_one, :locals => {:dates => @dates }

@@ -2,7 +2,7 @@
       <h1>Difference between today and ____ </h1>
       <h2>Please enter a date</h2><br>
       <% else %>
-        <h2>Difference between <%= @today.strftime('%a, %b %d, %Y') %> and <%= @date.strftime('%a, %b %d, %Y') %></h2><br>
+        <h2><%= @today.strftime('%a, %b %d, %Y') %> - <%= @date.strftime('%a, %b %d, %Y') %></h2><br>
     <% end %>
 
     <table class="full-width">
@@ -65,10 +65,6 @@
 
   <div class="col-md-9 col-md-push-1 col-xs-12">
       <h3>Pick a date</h3>
-        <button class="bg-purple l"><a href="/date/10/12/<%= Date.today.year %>">Hassan BDay</a></button>
-        <button class="bg-purple l"><a href="/date/10/13/<%= Date.today.year %>">Kendall Bday</a></button>
-        <button class="bg-pink l"><a href="/date/10/23/2015">Jake Wedding</a></button>
-        <button class="bg-red l"><a href="/date/10/29/2015">Next Red Cross</a></button>
         <button class="bg-orange l"><a href="/date/10/31/<%= Date.today.year %>">Halloween</a></button>
         <button class="bg-brown l"><a href="/date/11/26/2015">Thanksgiving</a></button>
         <button class="bg-purple l"><a href="/date/11/29/2015">Becca's Bday</a></button>
@@ -78,7 +74,9 @@
         <button class="bg-blue l"><a href="/date/3/18/2016">Matt's Match Day</a></button>
         <button class="bg-pink l"><a href="/date/4/16/2016">M&B Wedding</a></button>
         <button class="bg-pink l"><a href="/date/6/18/2016">Randy Wedding</a></button>
-        <button class="bg-deep-purple l"><a href="/date/8/5/2016">Summer Olympics Brazil</a></button><br><br>
+        <button class="bg-deep-purple l"><a href="/date/8/5/2016">Summer Olympics Brazil</a></button>
+        <button class="bg-purple l"><a href="/date/10/7/2016">October 7th</a></button>
+        <br><br>
       <h3>Past</h3>
         <button class="bg-blue l"><a href="/date/3/5/2015">March 5th, 2015</a></button>
         <button class="bg-pink l"><a href="/date/6/10/2015">Got Pip</a></button>
@@ -95,6 +93,10 @@
         <button class="bg-purple l"><a href="/date/9/25/2015">Matt's Bday</a></button>
         <button class="bg-grey l"><a href="/date/10/3/2015">Oil Change</a></button>
         <button class="bg-blue l"><a href="/date/10/7/<%= Date.today.year %>">October 7th</a></button>
+        <button class="bg-purple l"><a href="/date/10/12/<%= Date.today.year %>">Hassan BDay</a></button>
+        <button class="bg-purple l"><a href="/date/10/13/<%= Date.today.year %>">Kendall Bday</a></button>
+        <button class="bg-pink l"><a href="/date/10/23/2015">Jake Wedding</a></button>
+        <button class="bg-red l"><a href="/date/10/29/2015">Next Red Cross</a></button>
       <h3>Historic</h3>
         <button class="bg-blue-grey l"><a href="/date/1/26/1997">SuperBowl XXXI, 1997</a></button>
         <button class="bg-blue-grey l"><a href="/date/2/6/2011">SuperBowl XLV, 2011</a></button>
