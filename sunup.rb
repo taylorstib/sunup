@@ -24,13 +24,13 @@ end
 
 before '*/packers' do
   @games = [
-    {opponent: 'bears', date: Date.new(2015,9,13), location: :away,    result: 'W 31 - 23', win: true},
-    {opponent: 'seahawks', date: Date.new(2015,9,20), location: :home, result: 'W 27 - 17', win: true, prime: 'Sunday Night'},
-    {opponent: 'chiefs', date: Date.new(2015,9,28), location: :home,   result: 'W 38 - 28', win: true, prime: 'Monday Night'},
-    {opponent: '49ers', date: Date.new(2015,10,4), location: :away,    result: 'W 17 - 3',  win: true},
-    {opponent: 'rams', date: Date.new(2015,10,11), location: :home,    result: 'W 24 - 10', win: true},
+    {opponent: 'bears', date: Date.new(2015,9,13), location: :away,     result: 'W 31 - 23', win: true},
+    {opponent: 'seahawks', date: Date.new(2015,9,20), location: :home,  result: 'W 27 - 17', win: true, prime: 'Sunday Night'},
+    {opponent: 'chiefs', date: Date.new(2015,9,28), location: :home,    result: 'W 38 - 28', win: true, prime: 'Monday Night'},
+    {opponent: '49ers', date: Date.new(2015,10,4), location: :away,     result: 'W 17 - 3',  win: true},
+    {opponent: 'rams', date: Date.new(2015,10,11), location: :home,     result: 'W 24 - 10', win: true},
     {opponent: 'chargers', date: Date.new(2015,10,18), location: :home, result: 'W 27 - 20', win: true},
-    {opponent: 'broncos', date: Date.new(2015,11,1), location: :away,                                  prime: "Sunday Night"},
+    {opponent: 'broncos', date: Date.new(2015,11,1), location: :away,   result: 'L 10 - 29', win: false, prime: "Sunday Night"},
     {opponent: 'panthers', date: Date.new(2015,11,8), location: :away},
     {opponent: 'lions', date: Date.new(2015,11,15), location: :home},
     {opponent: 'vikings', date: Date.new(2015,11,22), location: :away},
@@ -53,7 +53,7 @@ before '*/mnf' do
     {date: Date.new(2015,10,12), home: 'Chargers', away: 'Steelers*',result: '20 - 24' },
     {date: Date.new(2015,10,19), home: 'Eagles*', away: 'Giants',    result: '27 - 7' },
     {date: Date.new(2015,10,26), home: 'Cardinals*', away: 'Ravens', result: '26 - 18' },
-    {date: Date.new(2015,11,2), home: 'Panthers', away: 'Colts',     result: nil },
+    {date: Date.new(2015,11,2), home: 'Panthers*', away: 'Colts',    result: '29 - 26' },
     {date: Date.new(2015,11,9), home: 'Chargers', away: 'Bears',     result: nil },
     {date: Date.new(2015,11,16), home: 'Bengals', away: 'Texans',    result: nil },
     {date: Date.new(2015,11,23), home: 'Patriots', away: 'Bills',    result: nil },
@@ -81,7 +81,7 @@ before '*/snf' do
     {date: Date.new(2015,10,11), home: 'Giants*', away: '49ers',      result: '30 - 27' },
     {date: Date.new(2015,10,18), home: 'Colts', away: 'Patriots*',    result: '27 - 34' },
     {date: Date.new(2015,10,25), home: 'Panthers*', away: 'Eagles',   result: '27 - 16' },
-    {date: Date.new(2015,11,1), home: 'Broncos', away: 'Packers',     result: nil },
+    {date: Date.new(2015,11,1), home: 'Broncos*', away: 'Packers',    result: '29 - 10' },
     {date: Date.new(2015,11,8), home: 'Cowboys', away: 'Eagles',      result: nil },
     {date: Date.new(2015,11,15), home: 'Seahawks', away: 'Cardinals', result: nil },
     {date: Date.new(2015,11,22), home: 'Chargers', away: 'Chiefs',    result: nil },
@@ -108,7 +108,7 @@ before '*/tnf' do
     {date: Date.new(2015,10,8), home: 'Texans', away: 'Colts*',      result: '27 - 20' },
     {date: Date.new(2015,10,15), home: 'Saints*', away: 'Falcons',   result: '31 - 21' },
     {date: Date.new(2015,10,22), home: '49ers', away: 'Seahawks*',   result: '3 - 30' },
-    {date: Date.new(2015,10,29), home: 'Patriots', away: 'Dolphins', result: nil },
+    {date: Date.new(2015,10,29), home: 'Patriots*', away: 'Dolphins', result: '36 - 10' },
     {date: Date.new(2015,11,5), home: 'Bengals', away: 'Browns',     result: nil },
     {date: Date.new(2015,11,12), home: 'Jets', away: 'Bills',        result: nil },
     {date: Date.new(2015,11,19), home: 'Jaguars', away: 'Titans',    result: nil },
@@ -129,8 +129,6 @@ end
 get '/all' do
   @dates = [
     {event: 'Today',                      date: Date.today},
-    {event: 'Halloween',                  date: Date.new(2015,10,31)},
-    {event: 'Dublin Conference',          date: Date.new(2015,11,3)},
     {event: 'Thanksgiving',               date: Date.new(2015,11,26)},
     {event: 'Becca\'s Bday',              date: Date.new(2015,11,29)},
     {event: 'Christmas',                  date: Date.new(2015,12,25)},
@@ -159,7 +157,8 @@ get '/all' do
     {event: 'Kendall Bday',               date: Date.new(2015,10,13)},
     {event: 'Hassan Bday',                date: Date.new(2015,10,12)},
     {event: 'Jake\'s Wedding',            date: Date.new(2015,10,23)},
-    {event: 'Next Red Cross',             date: Date.new(2015,10,29)}
+    {event: 'Next Red Cross',             date: Date.new(2015,10,29)},
+    {event: 'Halloween',                  date: Date.new(2015,10,31)}
   ]
 
   erb :all_in_one, :locals => {:dates => @dates }
