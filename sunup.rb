@@ -109,7 +109,7 @@ before '*/tnf' do
     {date: Date.new(2015,10,15), home: 'Saints*', away: 'Falcons',   result: '31 - 21' },
     {date: Date.new(2015,10,22), home: '49ers', away: 'Seahawks*',   result: '3 - 30' },
     {date: Date.new(2015,10,29), home: 'Patriots*', away: 'Dolphins', result: '36 - 10' },
-    {date: Date.new(2015,11,5), home: 'Bengals', away: 'Browns',     result: nil },
+    {date: Date.new(2015,11,5), home: 'Bengals*', away: 'Browns',    result: '31 - 10' },
     {date: Date.new(2015,11,12), home: 'Jets', away: 'Bills',        result: nil },
     {date: Date.new(2015,11,19), home: 'Jaguars', away: 'Titans',    result: nil },
     {date: Date.new(2015,12,3), home: 'Lions', away: 'Packers',      result: nil },
@@ -325,6 +325,11 @@ get '/api/mnf' do
 end
 
 get '/api/snf' do
+  content_type :json
+  @games.to_json
+end
+
+get '/api/tnf' do
   content_type :json
   @games.to_json
 end
