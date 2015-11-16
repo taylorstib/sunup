@@ -732,6 +732,12 @@ pre {
   color: #fff;
 }
 
+.bg-black,
+.bg-black a {
+  background: #000;
+  color: #fff;
+}
+
 .card {
   padding: 0.25em;
   margin: 0.25em;
@@ -798,6 +804,14 @@ button.l {
 
 button.xl {
   font-size: 1.5em;
+}
+
+@media screen and (max-width: 570px) {
+  button.xl {
+    display: block;
+    min-width: 300px;
+    margin: 6px auto;
+  }
 }
 
 button[disabled],

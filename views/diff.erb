@@ -22,11 +22,11 @@
           <td><%= @date.strftime('%a, %b %d, %Y') unless @date.nil? %></td>
         </tr>
         <tr>
-          <td>Day Difference</td>
+          <td>Days</td>
           <td><strong><%= @diff.to_s %></strong></td>
         </tr>
         <tr>
-          <td>Relative Difference</td>
+          <td>Relative</td>
           <td><strong><%= @words %></strong></td>
         </tr>
         <tr>
@@ -65,44 +65,48 @@
 
   <div class="col-md-9 col-md-push-1 col-xs-12">
       <h3>Pick a date</h3>
-        <button class="bg-brown l"><a href="/date/11/26/2015">Thanksgiving</a></button>
-        <button class="bg-purple l"><a href="/date/11/29/2015">Becca's Bday</a></button>
-        <button class="bg-red l"><a href="/date/12/25/<%= Date.today.year %>">Christmas</a></button>
-        <button class="bg-blue l"><a href="/date/1/1/<%= Date.today.year + 1 %>">New Years</a></button>
-        <button class="bg-amber l"><a href="/date/2/7/2016">Super Bowl</a></button>
-        <button class="bg-blue l"><a href="/date/3/18/2016">Matt's Match Day</a></button>
-        <button class="bg-pink l"><a href="/date/4/16/2016">M&B Wedding</a></button>
-        <button class="bg-pink l"><a href="/date/6/18/2016">Randy Wedding</a></button>
-        <button class="bg-deep-purple l"><a href="/date/8/5/2016">Summer Olympics Brazil</a></button>
-        <button class="bg-purple l"><a href="/date/10/7/2016">October 7th</a></button>
+        <button class="bg-brown xl"><a href="/date/11/26/2015">Thanksgiving</a></button>
+        <button class="bg-black xl"><a href="/date/11/27/2015">Black Friday</a></button>
+        <button class="bg-orange xl"><a href="/date/11/30/2015">Cyber Monday</a></button>
+        <button class="bg-purple xl"><a href="/date/11/29/2015">Becca's Bday</a></button>
+        <button class="bg-blue xl"><a href="/date/12/18/2015">NAU Graduation</a></button>
+        <button class="bg-red xl"><a href="/date/12/25/<%= Date.today.year %>">Christmas</a></button>
+        <button class="bg-blue xl"><a href="/date/1/1/<%= Date.today.year + 1 %>">New Years</a></button>
+        <button class="bg-amber xl"><a href="/date/2/7/2016">Super Bowl</a></button>
+        <button class="bg-blue xl"><a href="/date/3/18/2016">Matt's Match Day</a></button>
+        <button class="bg-pink xl"><a href="/date/4/16/2016">M&B Wedding</a></button>
+        <button class="bg-pink xl"><a href="/date/6/18/2016">Randy Wedding</a></button>
+        <button class="bg-deep-purple xl"><a href="/date/8/5/2016">Summer Olympics Brazil</a></button>
+        <button class="bg-purple xl"><a href="/date/10/7/2016">October 7th</a></button>
         <br><br>
       <h3>Past</h3>
-        <button class="bg-blue l"><a href="/date/3/5/2015">March 5th, 2015</a></button>
-        <button class="bg-pink l"><a href="/date/6/10/2015">Got Pip</a></button>
-        <button class="bg-deep-purple l"><a href="/date/7/4/2015">July 4th</a></button>
-        <button class="bg-pink l"><a href="/date/7/11/2015">Engagement</a></button>
-        <button class="bg-teal l"><a href="/date/7/21/2015">Cabo</a></button>
-        <button class="bg-green l"><a href="/date/8/13/2015">Packers First Preseason</a></button>
-        <button class="bg-teal l"><a href="/date/8/15/2015">Parents Cabo</a></button>
-        <button class="bg-red l"><a href="/date/9/3/2015">Red Cross</a></button>
-        <button class="bg-blue l"><a href="/date/9/3/2015">UofA First Game</a></button>
-        <button class="bg-light-green l"><a href="/date/9/4/2015">Wisconsin</a></button>
-        <button class="bg-indigo l"><a href="/date/9/10/2015">NFL First Game</a></button>
-        <button class="bg-amber l"><a href="/date/9/11/2015">Work Retreat</a></button>
-        <button class="bg-purple l"><a href="/date/9/25/2015">Matt's Bday</a></button>
-        <button class="bg-grey l"><a href="/date/10/3/2015">Oil Change</a></button>
-        <button class="bg-blue l"><a href="/date/10/7/<%= Date.today.year %>">October 7th</a></button>
-        <button class="bg-purple l"><a href="/date/10/12/<%= Date.today.year %>">Hassan BDay</a></button>
-        <button class="bg-purple l"><a href="/date/10/13/<%= Date.today.year %>">Kendall Bday</a></button>
-        <button class="bg-pink l"><a href="/date/10/23/2015">Jake Wedding</a></button>
-        <button class="bg-red l"><a href="/date/10/29/2015">Next Red Cross</a></button>
-        <button class="bg-orange l"><a href="/date/10/31/2015">Halloween</a></button>
+        <button class="bg-blue m"><a href="/date/3/5/2015">March 5th, 2015</a></button>
+        <button class="bg-pink m"><a href="/date/4/1/2015">Pip's Birth</a></button>
+        <button class="bg-pink m"><a href="/date/6/10/2015">Got Pip</a></button>
+        <button class="bg-deep-purple m"><a href="/date/7/4/2015">July 4th</a></button>
+        <button class="bg-pink m"><a href="/date/7/11/2015">Engagement</a></button>
+        <button class="bg-teal m"><a href="/date/7/21/2015">Cabo</a></button>
+        <button class="bg-green m"><a href="/date/8/13/2015">Packers First Preseason</a></button>
+        <button class="bg-teal m"><a href="/date/8/15/2015">Parents Cabo</a></button>
+        <button class="bg-red m"><a href="/date/9/3/2015">Red Cross</a></button>
+        <button class="bg-blue m"><a href="/date/9/3/2015">UofA First Game</a></button>
+        <button class="bg-light-green m"><a href="/date/9/4/2015">Wisconsin</a></button>
+        <button class="bg-indigo m"><a href="/date/9/10/2015">NFL First Game</a></button>
+        <button class="bg-amber m"><a href="/date/9/11/2015">Work Retreat</a></button>
+        <button class="bg-purple m"><a href="/date/9/25/2015">Matt's Bday</a></button>
+        <button class="bg-grey m"><a href="/date/10/3/2015">Oil Change</a></button>
+        <button class="bg-blue m"><a href="/date/10/7/<%= Date.today.year %>">October 7th</a></button>
+        <button class="bg-purple m"><a href="/date/10/12/<%= Date.today.year %>">Hassan BDay</a></button>
+        <button class="bg-purple m"><a href="/date/10/13/<%= Date.today.year %>">Kendall Bday</a></button>
+        <button class="bg-pink m"><a href="/date/10/23/2015">Jake Wedding</a></button>
+        <button class="bg-red m"><a href="/date/10/29/2015">Next Red Cross</a></button>
+        <button class="bg-orange m"><a href="/date/10/31/2015">Halloween</a></button>
       <h3>Historic</h3>
-        <button class="bg-blue-grey l"><a href="/date/1/26/1997">SuperBowl XXXI, 1997</a></button>
-        <button class="bg-blue-grey l"><a href="/date/2/6/2011">SuperBowl XLV, 2011</a></button>
-        <button class="bg-blue-grey l"><a href="/date/1/1/2000">January 1, 2000</a></button>
-        <button class="bg-blue-grey l"><a href="/date/1/1/2020">January 1, 2020</a></button>
-        <button class="bg-blue-grey l"><a href="/date/9/2/1945">End of WWII</a></button>
+        <button class="bg-blue-grey m"><a href="/date/1/26/1997">SuperBowl XXXI, 1997</a></button>
+        <button class="bg-blue-grey m"><a href="/date/2/6/2011">SuperBowl XLV, 2011</a></button>
+        <button class="bg-blue-grey m"><a href="/date/1/1/2000">January 1, 2000</a></button>
+        <button class="bg-blue-grey m"><a href="/date/1/1/2020">January 1, 2020</a></button>
+        <button class="bg-blue-grey m"><a href="/date/9/2/1945">End of WWII</a></button>
   </div>
 </div>
 

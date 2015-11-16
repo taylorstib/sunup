@@ -18,7 +18,7 @@
         <td><%= games %></td>
         <td><%= wins %></td>
         <td><%= losses %></td>
-        <td><%= wins / (wins + losses).to_f %></td>
+        <td><%= sprintf("%.3f", wins / (wins + losses).to_f) %></td>
     </tr>
   </tbody>
 </table>
