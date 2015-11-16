@@ -32,14 +32,14 @@ before '*/packers' do
     {opponent: 'chargers',  date: Date.new(2015,10,18), location: :home, result: 'W 27 - 20', win: true},
     {opponent: 'broncos',   date: Date.new(2015,11,1),  location: :away, result: 'L 10 - 29', win: false, prime: "Sunday Night"},
     {opponent: 'panthers',  date: Date.new(2015,11,8),  location: :away, result: 'L 29 - 37', win: false},
-    {opponent: 'lions',     date: Date.new(2015,11,15), location: :home},
+    {opponent: 'lions',     date: Date.new(2015,11,15), location: :home, result: 'L 16 - 18', win: false},
     {opponent: 'vikings',   date: Date.new(2015,11,22), location: :away},
     {opponent: 'bears',     date: Date.new(2015,11,26), location: :home,                                  prime: "Sunday Night"},
     {opponent: 'lions',     date: Date.new(2015,12,3),  location: :away,                                  prime: "Thursday Night"},
     {opponent: 'cowboys',   date: Date.new(2015,12,13), location: :home},
     {opponent: 'raiders',   date: Date.new(2015,12,20), location: :away},
     {opponent: 'cardinals', date: Date.new(2015,12,27), location: :away},
-    {opponent: 'vikings',   date: Date.new(2015,1,3),   location: :home}
+    {opponent: 'vikings',   date: Date.new(2016,1,3),   location: :home}
   ]
 end
 
@@ -110,7 +110,7 @@ before '*/tnf' do
     {date: Date.new(2015,10,22), home: '49ers',     away: 'Seahawks*',  result: '3 - 30' },
     {date: Date.new(2015,10,29), home: 'Patriots*', away: 'Dolphins',   result: '36 - 10' },
     {date: Date.new(2015,11,5),  home: 'Bengals*',  away: 'Browns',     result: '31 - 10' },
-    {date: Date.new(2015,11,12), home: 'Jets',      away: 'Bills',      result: nil },
+    {date: Date.new(2015,11,12), home: 'Jets',      away: 'Bills*',     result: '17 - 22' },
     {date: Date.new(2015,11,19), home: 'Jaguars',   away: 'Titans',     result: nil },
     {date: Date.new(2015,12,3),  home: 'Lions',     away: 'Packers',    result: nil },
     {date: Date.new(2015,12,10), home: 'Cardinals', away: 'Vikings',    result: nil },
