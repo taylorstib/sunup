@@ -4,7 +4,6 @@
   <% games = 0 %>
   <thead>
     <tr>
-      <th>Games</th>
       <th>Wins</th>
       <th>Losses</th>
       <th>Percent</th>
@@ -15,7 +14,6 @@
         <% @games.each{|game| if game.has_key?(:win) then games += 1 end} %>
         <% @games.each{|game| if game[:win] == true then wins += 1 end} %>
         <% @games.each{|game| if game[:win] == false then losses += 1 end} %>
-        <td><%= games %></td>
         <td><%= wins %></td>
         <td><%= losses %></td>
         <td><%= sprintf("%.3f", wins / (wins + losses).to_f) %></td>
