@@ -36,7 +36,7 @@ before '*/packers' do
     {opponent: 'vikings',   date: Date.new(2015,11,22), location: :away, result: 'W 30 - 13', win: true },
     {opponent: 'bears',     date: Date.new(2015,11,26), location: :home, result: 'L 13 - 17', win: false, prime: "Sunday Night"},
     {opponent: 'lions',     date: Date.new(2015,12,3),  location: :away, result: 'W 27 - 23', win: true,  prime: "Thursday Night"},
-    {opponent: 'cowboys',   date: Date.new(2015,12,13), location: :home},
+    {opponent: 'cowboys',   date: Date.new(2015,12,13), location: :home, result: 'W 28 - 7',  win: true},
     {opponent: 'raiders',   date: Date.new(2015,12,20), location: :away},
     {opponent: 'cardinals', date: Date.new(2015,12,27), location: :away},
     {opponent: 'vikings',   date: Date.new(2016,1,3),   location: :home}
@@ -58,8 +58,8 @@ before '*/mnf' do
     {date: Date.new(2015,11,16), home: 'Bengals',    away: 'Texans*',   result: '6 - 10' },
     {date: Date.new(2015,11,23), home: 'Patriots*',  away: 'Bills',     result: '20 - 13' },
     {date: Date.new(2015,11,30), home: 'Browns',     away: 'Ravens*',   result: '27 - 33' },
-    {date: Date.new(2015,12,7),  home: 'Redskins',   away: 'Cowboys',   result: nil },
-    {date: Date.new(2015,12,14), home: 'Dolphins',   away: 'Giants',    result: nil },
+    {date: Date.new(2015,12,7),  home: 'Redskins',   away: 'Cowboys*',  result: '16 - 19' },
+    {date: Date.new(2015,12,14), home: 'Dolphins',   away: 'Giants*',   result: '24 - 31' },
     {date: Date.new(2015,12,21), home: 'Saints',     away: 'Lions',     result: nil },
     {date: Date.new(2015,12,28), home: 'Broncos',    away: 'Bengals',   result: nil }
   ]
@@ -87,8 +87,8 @@ before '*/snf' do
     {date: Date.new(2015,11,22), home: 'Cardinals*',away: 'Bengals',    result: '34 - 31' },
     {date: Date.new(2015,11,26), home: 'Packers',   away: 'Bears*',     result: '13 - 17' },
     {date: Date.new(2015,11,29), home: 'Broncos*',  away: 'Patriots',   result: '30 - 24' },
-    {date: Date.new(2015,12,6),  home: 'Steelers',  away: 'Colts',      result: nil },
-    {date: Date.new(2015,12,13), home: 'Ravens',    away: 'Seahawks',   result: nil },
+    {date: Date.new(2015,12,6),  home: 'Steelers*', away: 'Colts',      result: '45 - 10' },
+    {date: Date.new(2015,12,13), home: 'Texans',    away: 'Patriots*',  result: '6 - 27' },
     {date: Date.new(2015,12,20), home: '49ers',     away: 'Bengals',    result: nil },
     {date: Date.new(2015,12,27), home: 'Ravens',    away: 'Steelers',   result: nil }
   ]
@@ -102,22 +102,22 @@ end
 
 before '*/tnf' do
   @games = [
-    {date: Date.new(2015,9,17),  home: 'Chiefs',    away: 'Broncos*',   result: '31 - 24' },
-    {date: Date.new(2015,9,24),  home: 'Giants*',   away: 'Redskins',   result: '21 - 32' },
-    {date: Date.new(2015,10,1),  home: 'Steelers',  away: 'Ravens*',    result: '20 - 23' },
-    {date: Date.new(2015,10,8),  home: 'Texans',    away: 'Colts*',     result: '27 - 20' },
-    {date: Date.new(2015,10,15), home: 'Saints*',   away: 'Falcons',    result: '31 - 21' },
-    {date: Date.new(2015,10,22), home: '49ers',     away: 'Seahawks*',  result: '3 - 30' },
-    {date: Date.new(2015,10,29), home: 'Patriots*', away: 'Dolphins',   result: '36 - 10' },
-    {date: Date.new(2015,11,5),  home: 'Bengals*',  away: 'Browns',     result: '31 - 10' },
-    {date: Date.new(2015,11,12), home: 'Jets',      away: 'Bills*',     result: '17 - 22' },
-    {date: Date.new(2015,11,19), home: 'Jaguars*',  away: 'Titans',     result: '19 - 13' },
-    {date: Date.new(2015,12,3),  home: 'Lions',     away: 'Packers*',   result: '27 - 23' },
-    {date: Date.new(2015,12,10), home: 'Cardinals', away: 'Vikings',    result: nil },
-    {date: Date.new(2015,12,17), home: 'Rams',      away: 'Buccaneers', result: nil },
-    {date: Date.new(2015,12,19), home: 'Cowboys',   away: 'Jets',       result: nil },
-    {date: Date.new(2015,12,24), home: 'Raiders',   away: 'Chargers',   result: nil },
-    {date: Date.new(2015,12,26), home: 'Eagles',    away: 'Redskins',   result: nil }
+    {date: Date.new(2015,9,17),  home: 'Chiefs',     away: 'Broncos*',   result: '31 - 24' },
+    {date: Date.new(2015,9,24),  home: 'Giants*',    away: 'Redskins',   result: '21 - 32' },
+    {date: Date.new(2015,10,1),  home: 'Steelers',   away: 'Ravens*',    result: '20 - 23' },
+    {date: Date.new(2015,10,8),  home: 'Texans',     away: 'Colts*',     result: '27 - 20' },
+    {date: Date.new(2015,10,15), home: 'Saints*',    away: 'Falcons',    result: '31 - 21' },
+    {date: Date.new(2015,10,22), home: '49ers',      away: 'Seahawks*',  result: '3 - 30' },
+    {date: Date.new(2015,10,29), home: 'Patriots*',  away: 'Dolphins',   result: '36 - 10' },
+    {date: Date.new(2015,11,5),  home: 'Bengals*',   away: 'Browns',     result: '31 - 10' },
+    {date: Date.new(2015,11,12), home: 'Jets',       away: 'Bills*',     result: '17 - 22' },
+    {date: Date.new(2015,11,19), home: 'Jaguars*',   away: 'Titans',     result: '19 - 13' },
+    {date: Date.new(2015,12,3),  home: 'Lions',      away: 'Packers*',   result: '27 - 23' },
+    {date: Date.new(2015,12,10), home: 'Cardinals*', away: 'Vikings',    result: '23 - 20' },
+    {date: Date.new(2015,12,17), home: 'Rams',       away: 'Buccaneers', result: nil },
+    {date: Date.new(2015,12,19), home: 'Cowboys',    away: 'Jets',       result: nil },
+    {date: Date.new(2015,12,24), home: 'Raiders',    away: 'Chargers',   result: nil },
+    {date: Date.new(2015,12,26), home: 'Eagles',     away: 'Redskins',   result: nil }
   ]
 end
 
